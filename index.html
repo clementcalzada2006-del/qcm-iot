@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>QCM IoT</title>
+  <meta name="description" content="Révisions du cours d'infrastructures IoT : QCM par chapitre avec rattrapage des erreurs, révision espacée, flashcards et examen blanc.">
+  <meta name="theme-color" content="#F4F5F7">
+  <meta name="color-scheme" content="light dark">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="QCM IoT">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // Thème et taille appliqués avant l'affichage pour éviter un flash.
+    try {
+      var r = JSON.parse(localStorage.getItem("qcm-iot-v1") || "{}").reglages || {};
+      if (r.theme === "clair") document.documentElement.dataset.theme = "light";
+      if (r.theme === "sombre") document.documentElement.dataset.theme = "dark";
+      if (r.taille === "grande") document.documentElement.dataset.taille = "grande";
+    } catch (e) {}
+  </script>
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <main id="app" tabindex="-1">
+    <p class="chargement">Chargement des questions…</p>
+  </main>
+  <div id="feuille" hidden></div>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <noscript><p class="chargement">Cette application a besoin de JavaScript.</p></noscript>
+</body>
+</html>

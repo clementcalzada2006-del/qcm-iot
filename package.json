@@ -1,0 +1,17 @@
+{
+  "name": "qcm-iot",
+  "private": true,
+  "type": "module",
+  "description": "QCM de révision du cours d'infrastructures IoT (PWA statique, sans serveur).",
+  "scripts": {
+    "serve": "node outils/serveur.mjs",
+    "verifier": "node outils/verifier-donnees.mjs",
+    "test:logique": "node outils/test-logique.mjs",
+    "test:navigateur": "node outils/test-navigateur.mjs",
+    "test": "node outils/verifier-donnees.mjs && node outils/test-logique.mjs && node outils/test-navigateur.mjs",
+    "icones": "node outils/icones.mjs"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.63.0"
+  }
+}
