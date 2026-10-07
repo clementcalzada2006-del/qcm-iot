@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 175" width="360" height="175" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13">
+  <rect width="360" height="175" fill="#ffffff"/>
+  <g stroke="#1f2937" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="8" y="40" width="74" height="42" rx="6" fill="#fdf1e6"/>
+    <rect x="278" y="40" width="74" height="42" rx="6" fill="#fdf1e6"/>
+    <path d="M82 61 H100 V30 M92 20 L100 30 L108 20"/>
+    <path d="M278 61 H260 V30 M252 20 L260 30 L268 20"/>
+    <path d="M118 45 Q132 35 146 45 T174 45 T202 45 T230 45" stroke="#B45309" stroke-width="2.5"/>
+    <path d="M230 45 L242 45"/>
+  </g>
+  <g fill="#1f2937" text-anchor="middle">
+    <polygon points="240,39 250,45 240,51"/>
+    <text x="45" y="57" font-size="12">émetteur</text>
+    <text x="45" y="74" font-weight="700">P<tspan dy="3" font-size="10">E</tspan></text>
+    <text x="315" y="57" font-size="12">récepteur</text>
+    <text x="315" y="74" font-weight="700">P<tspan dy="3" font-size="10">R</tspan></text>
+    <text x="100" y="100">G<tspan dy="3" font-size="10">E</tspan></text>
+    <text x="260" y="100">G<tspan dy="3" font-size="10">R</tspan></text>
+    <text x="180" y="26" fill="#B45309">affaiblissement α</text>
+    <text x="180" y="72" font-size="12">distance R, fréquence f</text>
+    <text x="180" y="132">P<tspan dy="3" font-size="10">R</tspan><tspan dy="-3"> = P</tspan><tspan dy="3" font-size="10">E</tspan><tspan dy="-3"> + G</tspan><tspan dy="3" font-size="10">E</tspan><tspan dy="-3"> + G</tspan><tspan dy="3" font-size="10">R</tspan><tspan dy="-3"> − α   (en dB)</tspan></text>
+    <text x="180" y="158" font-size="12">bonne réception si P<tspan dy="3" font-size="9">R</tspan><tspan dy="-3"> &gt; sensibilité</tspan></text>
+  </g>
+</svg>

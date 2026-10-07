@@ -83,6 +83,9 @@ const badgeType = (t) => {
   return `<span class="badge ${x.classe}">${x.icone}${esc(x.nom)}</span>`;
 };
 const titreChap = (id) => `Chapitre ${id} · ${esc(CHAP[id].titre)}`;
+// Schéma éventuel de la question (fond blanc, même en thème sombre)
+const htmlFigure = (q) =>
+  q.figure ? `<figure class="figure"><img src="${esc(q.figure.src)}" alt="${esc(q.figure.alt || "Schéma de la question")}" decoding="async"></figure>` : "";
 const idsDuChapitre = (id) => DATA.questions.filter((q) => q.chapitre === id).map((q) => q.id);
 
 function anneau(c, total, taille = 64) {
@@ -399,6 +402,7 @@ function pageSerie(anim) {
       ${bandeau}
       ${message}
       <h2 class="enonce" id="enonce" tabindex="-1">${fmt(q.question)}</h2>
+      ${htmlFigure(q)}
       ${htmlChoix(q, v, v.valide)}
       ${v.valide ? "" : `<button class="btn-lien nsp" data-act="nsp">Je ne sais pas</button>${aideClavier(etat.reglages.confiance)}`}
       ${correction}
@@ -477,7 +481,7 @@ function bilanSerie() {
   if (serie.chap) {
     const n = L.compter(etat, idsDuChapitre(serie.chap));
     suiteChap = `<section class="carte chapitre chap" style="${style}; margin-top:16px">
-      <div class="chap-tete">${anneau(n, 20)}<div><p class="chap-num">${titreChap(serie.chap)}</p>
+      <div class="chap-tete">${anneau(n, idsDuChapitre(serie.chap).length)}<div><p class="chap-num">${titreChap(serie.chap)}</p>
       <p class="compteurs">${nb(n.maitrisee, "maîtrisée", "maîtrisées")} · ${n.revoir} à revoir · ${nb(n.nouvelle, "nouvelle", "nouvelles")}</p></div></div></section>`;
   }
   const boutons = [];
@@ -527,9 +531,9 @@ function pageMaitrise(chap) {
       <p><b>Réussite du premier coup :</b> ${taux(st.reussis, st.essais)} (${st.reussis} sur ${st.essais} réponses)</p>
       <div class="lignes-barres" style="margin-top:12px">${lignesTypes(st.parType)}</div>
     </section>
-    <p class="intro" style="margin-top:16px">« Refaire les 20 questions » ne change rien aux états tant qu'il n'y a pas d'erreur : une erreur ou un « Pas sûr » remet la question à revoir.</p>
+    <p class="intro" style="margin-top:16px">« Refaire les ${ids.length} questions » ne change rien aux états tant qu'il n'y a pas d'erreur : une erreur ou un « Pas sûr » remet la question à revoir.</p>
     <div class="pile">
-      <button class="btn btn-chap btn-plein" data-act="refaire" data-chap="${chap}">Refaire les 20 questions</button>
+      <button class="btn btn-chap btn-plein" data-act="refaire" data-chap="${chap}">Refaire les ${ids.length} questions</button>
       <a class="btn btn-chap-sec btn-plein" href="#/essentiel/${chap}">L'essentiel du chapitre</a>
       <a class="btn btn-sec btn-plein" href="#/">Retour à l'accueil</a>
     </div>
@@ -549,6 +553,7 @@ function pageExamen(anim) {
     `<section class="chap" style="${styleChap(q.chapitre)}" data-qid="${q.id}">
       ${htmlBandeau(q, { compteur: `${examen.pos + 1} / ${examen.ids.length}`, progression: (100 * examen.pos) / examen.ids.length, chrono: formatDuree(examen.fin - Date.now()), quitter: "quitter-examen" })}
       <h2 class="enonce" tabindex="-1">${fmt(q.question)}</h2>
+      ${htmlFigure(q)}
       ${htmlChoix(q, v, false)}
       <button class="btn-lien nsp" data-act="nsp">Je ne sais pas</button>
       ${aideClavier(etat.reglages.confiance)}
@@ -671,6 +676,7 @@ function resultatExamen() {
         <summary><span class="${juste ? "ok" : "ko"}">${juste ? ICONES.ok : ICONES.ko}</span><span><b>${i + 1}.</b> ${fmt(q.question)}</span></summary>
         <div class="corps">
           <div>${badgeType(q.type)}</div>
+          ${htmlFigure(q)}
           ${juste ? "" : `<div class="rep faux"><b>Ta réponse</b>${ta}</div>`}
           <div class="rep juste"><b>Bonne réponse${juste && r?.sur === false ? " (donnée avec « Pas sûr »)" : ""}</b>${fmt(q.choix[q.bonne])}</div>
           <p>${fmt(q.explication)}</p>
@@ -684,7 +690,7 @@ function resultatExamen() {
     <div class="bilan-tete">
       <p>Examen blanc · ${formatDuree(ex.duree)} utilisées sur 25:00</p>
       <h1>Note</h1>
-      <p class="gros-score">${ex.justes} / 20</p>
+      <p class="gros-score">${ex.justes} / ${ex.ids.length}</p>
       <p>${ratees ? `${nb(ratees, "question ratée passe", "questions ratées passent")} « à revoir »` : "Aucune erreur"}</p>
     </div>
     <h2 class="titre-section">Par chapitre</h2>
@@ -757,6 +763,7 @@ function pageFlash(anim) {
     `<section class="chap" style="${styleChap(q.chapitre)}" data-qid="${q.id}">
       ${htmlBandeau(q, { compteur: premier ? `${flash.pos + 1} / ${flash.total}` : "Reprise", progression: (100 * flash.sues.length) / flash.total, encore: reste ? `Encore ${nb(reste, "carte", "cartes")} à savoir` : "", quitter: "quitter-flash" })}
       <h2 class="enonce" tabindex="-1">${fmt(q.question)}</h2>
+      ${htmlFigure(q)}
       ${corps}
       <p class="aide-clavier">Clavier : <kbd>Entrée</kbd> pour afficher la réponse, puis <kbd>1</kbd> = Je ne savais pas, <kbd>2</kbd> = Je savais</p>
       ${bas}
@@ -969,7 +976,7 @@ function pageStats() {
     .map((c) => {
       const st = L.statsQuestions(DATA, etat, (q) => q.chapitre === c.id);
       return `<article class="carte chapitre chap" style="${styleChap(c.id)}">
-        <div class="chap-tete">${anneau(st, 20)}<div><p class="chap-num">Chapitre ${c.id}</p><h3>${esc(c.titre)}</h3>
+        <div class="chap-tete">${anneau(st, st.maitrisee + st.revoir + st.nouvelle)}<div><p class="chap-num">Chapitre ${c.id}</p><h3>${esc(c.titre)}</h3>
         <p class="compteurs">${nb(st.maitrisee, "maîtrisée", "maîtrisées")} · ${st.revoir} à revoir · ${nb(st.nouvelle, "nouvelle", "nouvelles")}</p></div></div>
         <p style="margin-top:12px"><b>Réussite du premier coup :</b> ${taux(st.reussis, st.essais)}${st.essais ? ` (${st.reussis}/${st.essais})` : ""}</p>
         <div class="lignes-barres" style="margin-top:10px">${lignesTypes(st.parType)}</div>
@@ -1137,7 +1144,7 @@ function confirmerReset(tout) {
     titre: tout ? "Tout réinitialiser ?" : `Réinitialiser le chapitre ${chap} ?`,
     corps: tout
       ? `<p>Les états, les boîtes de révision, l'historique et la série de jours seront effacés. Les réglages sont conservés.</p>`
-      : `<p>Les 20 questions du chapitre ${chap} (${esc(CHAP[chap].titre)}) redeviendront « nouvelles ». Le reste ne change pas.</p>`,
+      : `<p>Les ${idsDuChapitre(chap).length} questions du chapitre ${chap} (${esc(CHAP[chap].titre)}) redeviendront « nouvelles ». Le reste ne change pas.</p>`,
     actions: [
       { label: "Annuler", classe: "btn-sec" },
       {

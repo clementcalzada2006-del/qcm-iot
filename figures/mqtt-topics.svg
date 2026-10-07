@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 248" width="360" height="248" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13">
+  <rect width="360" height="248" fill="#ffffff"/>
+  <g stroke="#6A1B4D" stroke-width="1.6" fill="none" stroke-linecap="round">
+    <!-- House vers les pièces -->
+    <path d="M62 120 H82 M82 45 V200 M82 45 H104 M82 120 H104 M82 200 H104"/>
+    <!-- pièces vers les capteurs -->
+    <path d="M188 45 H200 M200 25 V65 M200 25 H214 M200 45 H214 M200 65 H214"/>
+    <path d="M168 120 H200 M200 100 V140 M200 100 H214 M200 120 H214 M200 140 H214"/>
+    <path d="M178 200 H200 M200 175 V235 M200 175 H214 M200 195 H214 M200 215 H214 M200 235 H214"/>
+  </g>
+  <g fill="#1f2937">
+    <text x="12" y="125" font-weight="700" font-size="14" fill="#6A1B4D">House</text>
+    <text x="108" y="50" font-weight="700">Livingroom</text>
+    <text x="108" y="125" font-weight="700">Bedroom</text>
+    <text x="108" y="205" font-weight="700">Bathroom</text>
+    <text x="218" y="30">Temperature</text>
+    <text x="218" y="50">Pressure</text>
+    <text x="218" y="70">Humidity</text>
+    <text x="218" y="105">Temperature</text>
+    <text x="218" y="125">Pressure</text>
+    <text x="218" y="145">Light</text>
+    <text x="218" y="180">Temperature</text>
+    <text x="218" y="200">Pressure</text>
+    <text x="218" y="220">Humidity</text>
+    <text x="218" y="240">Noise</text>
+  </g>
+</svg>

@@ -15,13 +15,14 @@ function verif(cond, msg) {
   }
 }
 const J = "2026-10-06";
+const N3 = data.questions.filter((q) => q.chapitre === "III").length;
 const bon = (id) => ({ juste: true, sur: true });
 
 // 1. Série complète d'un chapitre neuf, une erreur sur la première question
 {
   const etat = L.etatVide();
   const s0 = L.serieChapitre(data, etat, "III");
-  verif(s0.genre === "complet" && s0.ids.length === 20, "chapitre neuf : les 20 questions");
+  verif(s0.genre === "complet" && s0.ids.length === N3, "chapitre neuf : toutes ses questions");
   const serie = L.nouvelleSerie({ mode: "QCM", titre: "III", chap: "III", ids: s0.ids }, etat);
   const ratee = serie.file[0];
   L.repondre(serie, etat, ratee, { juste: false, sur: true }, J);
@@ -33,11 +34,11 @@ const bon = (id) => ({ juste: true, sur: true });
     L.repondre(serie, etat, L.questionCourante(serie), bon(), J);
     L.avancer(serie);
   }
-  verif(serie.finie && serie.reussies.length === 20, "la série se termine quand les 20 sont réussies");
-  verif(serie.file.length === 21, "la question ratée est revenue une fois");
+  verif(serie.finie && serie.reussies.length === N3, "la série se termine quand toutes sont réussies");
+  verif(serie.file.length === N3 + 1, "la question ratée est revenue une fois");
   verif(L.etatDe(etat, ratee) === "revoir", "réussie plus tard dans la boucle : reste à revoir");
-  verif(L.compter(etat, s0.ids).maitrisee === 19, "les 19 autres sont maîtrisées");
-  verif(L.scoreSerie(serie).justes === 19, "score du premier coup = 19/20");
+  verif(L.compter(etat, s0.ids).maitrisee === N3 - 1, "toutes les autres sont maîtrisées");
+  verif(L.scoreSerie(serie).justes === N3 - 1, "score du premier coup = N-1 / N");
 
   // 2. Lancement suivant : uniquement la question ratée
   const s1 = L.serieChapitre(data, etat, "III");
@@ -52,14 +53,14 @@ const bon = (id) => ({ juste: true, sur: true });
   L.repondre(serie3, etat, ratee, bon(), J);
   verif(L.etatDe(etat, ratee) === "maitrisee", "réussie du premier coup avec « Sûr » : maîtrisée");
   const s4 = L.serieChapitre(data, etat, "III");
-  verif(s4.genre === "maitrise", "20 maîtrisées : chapitre maîtrisé");
+  verif(s4.genre === "maitrise", "toutes maîtrisées : chapitre maîtrisé");
 
   // 3. Refaire les 20 : rien ne change sans erreur, une erreur remet à revoir
   const serie5 = L.nouvelleSerie({ mode: "Refaire", titre: "III", chap: "III", ids: s4.ids }, etat);
-  for (const id of s4.ids.slice(0, 19)) L.repondre(serie5, etat, id, bon(), J);
-  verif(L.compter(etat, s4.ids).maitrisee === 20, "refaire sans erreur : toujours 20 maîtrisées");
-  L.repondre(serie5, etat, s4.ids[19], { juste: false, sur: true }, J);
-  verif(L.etatDe(etat, s4.ids[19]) === "revoir", "refaire avec une erreur : la question repasse à revoir");
+  for (const id of s4.ids.slice(0, N3 - 1)) L.repondre(serie5, etat, id, bon(), J);
+  verif(L.compter(etat, s4.ids).maitrisee === N3, "refaire sans erreur : toujours toutes maîtrisées");
+  L.repondre(serie5, etat, s4.ids[N3 - 1], { juste: false, sur: true }, J);
+  verif(L.etatDe(etat, s4.ids[N3 - 1]) === "revoir", "refaire avec une erreur : la question repasse à revoir");
 }
 
 // 4. Exigence de maîtrise = 2 séries différentes

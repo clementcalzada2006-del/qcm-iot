@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 252" width="360" height="252" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" font-size="11">
+  <rect width="360" height="252" fill="#ffffff"/>
+  <g stroke="#1f2937" stroke-width="1.4">
+    <rect x="8" y="22" width="82" height="36" fill="#e3e8ea"/>
+    <rect x="90" y="22" width="70" height="36" fill="#e3e8ea"/>
+    <rect x="160" y="22" width="130" height="36" fill="#ffffff"/>
+    <rect x="290" y="22" width="62" height="36" fill="#e3e8ea"/>
+
+    <rect x="8" y="84" width="82" height="36" fill="#eef1f2"/>
+    <rect x="90" y="84" width="180" height="36" fill="#ffffff"/>
+    <rect x="270" y="84" width="82" height="36" fill="#eef1f2"/>
+
+    <rect x="8" y="146" width="142" height="36" fill="#eef1f2"/>
+    <rect x="150" y="146" width="70" height="36" fill="#eef1f2"/>
+    <rect x="220" y="146" width="132" height="36" fill="#fff4cc"/>
+
+    <rect x="8" y="208" width="92" height="36" fill="#eef1f2"/>
+    <rect x="100" y="208" width="84" height="36" fill="#eef1f2"/>
+    <rect x="184" y="208" width="84" height="36" fill="#eef1f2"/>
+    <rect x="268" y="208" width="84" height="36" fill="#eef1f2"/>
+  </g>
+  <g fill="#37474F" font-size="11" font-weight="700">
+    <text x="8" y="16">Couche physique</text>
+    <text x="8" y="78">PHY Payload (couche MAC)</text>
+    <text x="8" y="140">MAC Payload</text>
+    <text x="8" y="202">Frame Header (FHDR)</text>
+  </g>
+  <g fill="#1f2937" text-anchor="middle">
+    <text x="49" y="37" font-weight="700">Préambule</text><text x="49" y="51">N symboles</text>
+    <text x="125" y="37" font-weight="700">En-tête</text><text x="125" y="51">8 symboles</text>
+    <text x="225" y="37" font-weight="700">PHY Payload</text><text x="225" y="51">P octets</text>
+    <text x="321" y="37" font-weight="700">CRC</text><text x="321" y="51">2 octets</text>
+
+    <text x="49" y="99" font-weight="700">MAC Header</text><text x="49" y="113">1 octet</text>
+    <text x="180" y="99" font-weight="700">MAC Payload</text><text x="180" y="113">M octets</text>
+    <text x="311" y="99" font-weight="700">MIC</text><text x="311" y="113">4 octets</text>
+
+    <text x="79" y="161" font-weight="700">Frame Header</text><text x="79" y="175">7 à 22 octets</text>
+    <text x="185" y="161" font-weight="700">Frame Port</text><text x="185" y="175">1 octet</text>
+    <text x="286" y="161" font-weight="700">Frame Payload</text><text x="286" y="175">N octets (chiffrés)</text>
+
+    <text x="54" y="223" font-weight="700" font-size="10">Device Address</text><text x="54" y="237">4 octets</text>
+    <text x="142" y="223" font-weight="700" font-size="10">Frame Control</text><text x="142" y="237">1 octet</text>
+    <text x="226" y="223" font-weight="700" font-size="10">Frame Counter</text><text x="226" y="237">2 octets</text>
+    <text x="310" y="223" font-weight="700" font-size="10">Frame Options</text><text x="310" y="237">0 à 15 octets</text>
+  </g>
+</svg>

@@ -484,6 +484,96 @@
    "cours": "Cours I p. 6"
   },
   {
+   "id": "I-21",
+   "chapitre": "I",
+   "type": "connaissance",
+   "question": "« Internet of Battlefield Things » et « Ocean of Things » : à quelle catégorie d'applications IoT ces projets appartiennent-ils ?",
+   "choix": [
+    "Militaire",
+    "Infrastructures",
+    "Industrie",
+    "Organisations"
+   ],
+   "bonne": 0,
+   "explication": "Le cours range « Internet of Battlefield Things » et « Ocean of Things » dans la 5e catégorie, militaire. Les quatre autres sont grand public, organisations, industrie et infrastructures.",
+   "cours": "Cours I p. 6"
+  },
+  {
+   "id": "I-22",
+   "chapitre": "I",
+   "type": "compréhension",
+   "question": "Une usine pose des capteurs de vibrations, de température et de vitesse de rotation sur ses moteurs. Quel est le but principal ?",
+   "choix": [
+    "Facturer l'électricité consommée par chaque moteur de l'atelier",
+    "Détecter une dérive avant la panne : la maintenance prédictive",
+    "Localiser les moteurs par GNSS lorsqu'ils changent de bâtiment",
+    "Remplacer les automates de commande par des capteurs sans fil"
+   ],
+   "bonne": 1,
+   "explication": "Exemple industriel du cours : vitesse de rotation, température, vibrations, bruit et qualité de l'air servent à l'automatisation des procédés, à la fiabilité et à la maintenance prédictive (intervenir avant la panne), ainsi qu'à la sécurité.",
+   "cours": "Cours I p. 10"
+  },
+  {
+   "id": "I-23",
+   "chapitre": "I",
+   "type": "compréhension",
+   "question": "Dans l'exemple n° 1 du cours (surveillance d'un procédé industriel), comment les nœuds remontent-ils leurs mesures ?",
+   "choix": [
+    "Par des passerelles LoRaWAN d'un opérateur, puis un serveur réseau",
+    "Par une liaison satellite Iridium, puis une base de données cloud",
+    "Par le Wi-Fi du réseau local de l'entreprise, jusqu'à ses serveurs",
+    "Par le réseau GSM, chaque nœud envoyant un SMS à la supervision"
+   ],
+   "bonne": 2,
+   "explication": "Architecture n° 1 : les nœuds sont reliés en Wi-Fi au réseau local de l'entreprise (switches, serveur, base de données), avec une supervision locale ; Internet sert à la supervision à distance et à l'archivage dans des bases cloud. Passerelles et serveur réseau correspondent au réseau opéré (exemple n° 2).",
+   "cours": "Cours I p. 13 ; IV p. 4"
+  },
+  {
+   "id": "I-24",
+   "chapitre": "I",
+   "type": "connaissance",
+   "question": "Équilibrer la production et la consommation d'électricité grâce à des capteurs et compteurs communicants relève de quelle catégorie ?",
+   "choix": [
+    "Grand public (maison connectée)",
+    "Industrie (procédés automatisés)",
+    "Organisations (gestion du bâtiment)",
+    "Infrastructures (réseau électrique)"
+   ],
+   "bonne": 3,
+   "explication": "Dans le cours, « Energy management : power generation and balancing » fait partie des infrastructures, avec la gestion des villes et la surveillance de l'environnement. La domotique est grand public, le bâtiment relève des organisations.",
+   "cours": "Cours I p. 6"
+  },
+  {
+   "id": "I-25",
+   "chapitre": "I",
+   "type": "connaissance",
+   "question": "Pour suivre un vélo volé ou un colis, quels réseaux le cours cite-t-il pour remonter les positions GNSS ?",
+   "choix": [
+    "LoRaWAN, GSM ou satellite",
+    "Wi-Fi, Bluetooth et NFC",
+    "Ethernet, bus CAN et Modbus",
+    "Zigbee, RFID et infrarouge"
+   ],
+   "bonne": 0,
+   "explication": "Exemple « GPS (GNSS) Tracking » : infrastructure LoRaWAN, GSM ou satellite (Iridium) ; capteurs GNSS, inertiels et environnementaux ; applications : biologging, antivol, suivi de colis, sécurité en mer. Les autres réseaux ont une portée trop courte ou sont filaires.",
+   "cours": "Cours I p. 9"
+  },
+  {
+   "id": "I-26",
+   "chapitre": "I",
+   "type": "compréhension",
+   "question": "Des capteurs de température suivent des produits frais du producteur jusqu'au magasin. Comment s'appelle cette application ?",
+   "choix": [
+    "L'agriculture de précision au champ",
+    "La gestion de la chaîne du froid",
+    "La maintenance prédictive des camions",
+    "La digitalisation du produit"
+   ],
+   "bonne": 1,
+   "explication": "Le cours classe la « Cold Chain Management » et la sécurité alimentaire dans les exemples agriculture et alimentation : on surveille en continu la température des produits frais pendant le transport et le stockage.",
+   "cours": "Cours I p. 12"
+  },
+  {
    "id": "II-01",
    "chapitre": "II",
    "type": "connaissance",
@@ -736,7 +826,11 @@
    ],
    "bonne": 3,
    "explication": "⟨V⟩ = α × Vdd donc α = 2 / 5 = 0,4. t_haut = α × T = 0,4 × 2 ms = 0,8 ms. 1,2 ms est la durée à l'état bas ; 0,4 est α, pas une durée.",
-   "cours": "Cours II p. 21"
+   "cours": "Cours II p. 21",
+   "figure": {
+    "src": "figures/pwm.svg",
+    "alt": "Signal PWM entre 0 et Vdd, de période T, à l'état haut pendant th, avec sa tension moyenne en pointillés"
+   }
   },
   {
    "id": "II-18",
@@ -766,7 +860,11 @@
    ],
    "bonne": 3,
    "explication": "Conservation de la charge : Vout = Vin × C1 / (C1 + C2) = 5 × 1 / 5 = 1 V. 4 V correspond à C1 et C2 inversés.",
-   "cours": "Cours II p. 19"
+   "cours": "Cours II p. 19",
+   "figure": {
+    "src": "figures/diviseur-capacitif.svg",
+    "alt": "Diviseur capacitif : C1 entre Vin et le nœud de sortie, C2 entre ce nœud et la masse"
+   }
   },
   {
    "id": "II-20",
@@ -782,6 +880,262 @@
    "bonne": 0,
    "explication": "Un cycle dure 1 / 400 000 s = 2,5 µs ; 39 × 2,5 µs = 97,5 µs. 390 µs est la durée à 100 kHz.",
    "cours": "Cours II p. 39"
+  },
+  {
+   "id": "II-21",
+   "chapitre": "II",
+   "type": "compréhension",
+   "question": "Un récepteur GPS est relié au microcontrôleur par deux fils, TX et RX. Quelle interface utilise-t-il ?",
+   "choix": [
+    "Le bus I2C",
+    "Le bus SPI",
+    "Une UART",
+    "Une entrée ADC"
+   ],
+   "bonne": 2,
+   "explication": "TX et RX sont les lignes d'une UART (liaison série asynchrone, TX et RX croisés). Le cours cite le récepteur GPS parmi les exemples d'UART, avec la console de débogage et les modules Bluetooth ou Zigbee. L'I2C utilise SCL et SDA, le SPI CLK, MOSI, MISO et CS.",
+   "cours": "Cours II p. 10, p. 32, p. 35"
+  },
+  {
+   "id": "II-22",
+   "chapitre": "II",
+   "type": "connaissance",
+   "question": "Quel avantage apporte un microcontrôleur qui intègre processeur, mémoires et périphériques sur une seule puce ?",
+   "choix": [
+    "Il permet de se passer complètement de logiciel embarqué",
+    "Il remplace les capteurs par des mesures faites en interne",
+    "Il fournit directement une liaison radio longue portée",
+    "Il réduit le coût, la taille et la consommation du système"
+   ],
+   "bonne": 3,
+   "explication": "Le MCU est un petit ordinateur intégré (processeur, mémoire de code et de données, périphériques, interfaces). En regroupant les périphériques, il réduit le coût d'assemblage, la taille et la consommation : c'est le cœur de la plupart des systèmes embarqués.",
+   "cours": "Cours II p. 9"
+  },
+  {
+   "id": "II-23",
+   "chapitre": "II",
+   "type": "compréhension",
+   "question": "Un capteur fournit une tension proportionnelle à la grandeur mesurée. Que faut-il pour la lire avec un microcontrôleur ?",
+   "choix": [
+    "Un CAN (ADC), puisque c'est un capteur analogique",
+    "Un CNA, qui transforme la tension en nombre binaire",
+    "Un bus I2C, sur lequel la tension se lit directement",
+    "Une simple broche GPIO, lue comme un 0 ou un 1"
+   ],
+   "bonne": 0,
+   "explication": "Un capteur analogique (tension, courant) demande un CAN supplémentaire. Un capteur numérique intègre déjà son CAN et une interface de communication (UART, SPI, I2C). Le CNA fait l'inverse : nombre vers tension.",
+   "cours": "Cours II p. 12-13"
+  },
+  {
+   "id": "II-24",
+   "chapitre": "II",
+   "type": "raisonnement",
+   "question": "Le CNA R-2R 3 bits du schéma est alimenté sous Vref = 3,3 V. Quelle tension de sortie donne le code d2 d1 d0 = 110 ?",
+   "choix": [
+    "1,650 V",
+    "2,475 V",
+    "0,825 V",
+    "2,888 V"
+   ],
+   "bonne": 1,
+   "explication": "Superposition : Vout = Vref × (d2/2 + d1/4 + d0/8) = 3,3 × (1/2 + 1/4 + 0) = 3,3 × 0,75 = 2,475 V. 1,65 V ne compte que d2, 0,825 V que d1, et 2,888 V correspond au code 111 (0,875 × Vref).",
+   "cours": "Cours II p. 17",
+   "figure": {
+    "src": "figures/cna-r2r.svg",
+    "alt": "Échelle R-2R 3 bits : 2R de terminaison à la masse, trois résistances 2R reliées aux bits d0, d1, d2, résistances R en série jusqu'à Vout"
+   }
+  },
+  {
+   "id": "II-25",
+   "chapitre": "II",
+   "type": "raisonnement",
+   "question": "Le CNA capacitif 3 bits du schéma est alimenté sous Vdd = 3,3 V. Quelle tension de sortie donne le code d2 d1 d0 = 011 ?",
+   "choix": [
+    "2,475 V",
+    "1,414 V",
+    "1,238 V",
+    "0,413 V"
+   ],
+   "bonne": 2,
+   "explication": "Les condensateurs 4C, 2C, C et C (terminaison) font 8C au total. Conservation de la charge : Vout = Vdd × (4 d2 + 2 d1 + d0) / 8 = 3,3 × 3/8 ≈ 1,238 V. 2,475 V correspond au code lu à l'envers (110), 1,414 V oublie le condensateur de terminaison (division par 7), 0,413 V est un seul quantum.",
+   "cours": "Cours II p. 19-20",
+   "figure": {
+    "src": "figures/cna-capacitif.svg",
+    "alt": "CNA capacitif 3 bits : condensateurs 4C (d2), 2C (d1), C (d0) et C relié à 0 V, armatures du haut reliées à Vout"
+   }
+  },
+  {
+   "id": "II-26",
+   "chapitre": "II",
+   "type": "compréhension",
+   "question": "Pourquoi un CAN Flash est-il rarement intégré aux microcontrôleurs courants ?",
+   "choix": [
+    "Il est trop lent : il lui faut une étape de comparaison par bit",
+    "Il ne sait convertir que des tensions d'entrée négatives",
+    "Il exige une horloge externe à quartz de 32 768 Hz dédiée",
+    "Il demande environ 2^N comparateurs : trop de surface de silicium"
+   ],
+   "bonne": 3,
+   "explication": "Le Flash compare la tension à tous les seuils en même temps : c'est rapide, mais coûteux en résistances, en comparateurs (environ 2^N) et en surface de silicium. Il est réservé aux applications hautes performances ; le SAR, une étape par bit, est le choix courant des MCU.",
+   "cours": "Cours II p. 22-23"
+  },
+  {
+   "id": "II-27",
+   "chapitre": "II",
+   "type": "raisonnement",
+   "question": "Un CAN SAR 3 bits a Vdd = 5 V et reçoit Vin = 3,5 V. Quel code obtient-il par dichotomie ?",
+   "choix": [
+    "101",
+    "110",
+    "011",
+    "111"
+   ],
+   "bonne": 0,
+   "explication": "d2 : 3,5 V > 5/2 = 2,5 V, donc 1. d1 : 3,5 V < 2,5 + 1,25 = 3,75 V, donc 0. d0 : 3,5 V > 2,5 + 0,625 = 3,125 V, donc 1. Code 101 : c'est l'exemple déroulé dans le cours (3,5 / 5 × 8 = 5,6, tronqué à 5).",
+   "cours": "Cours II p. 23-29"
+  },
+  {
+   "id": "II-28",
+   "chapitre": "II",
+   "type": "connaissance",
+   "question": "Sur une liaison UART, à quoi servent les lignes optionnelles RTS et CTS ?",
+   "choix": [
+    "À transmettre l'horloge, comme en mode USART synchrone",
+    "Au contrôle de flux : signaler quand on peut envoyer",
+    "À détecter les erreurs de transmission par un bit de parité",
+    "À adresser plusieurs esclaves sur les deux mêmes fils"
+   ],
+   "bonne": 1,
+   "explication": "RTS (Request To Send) et CTS (Clear To Send) assurent un contrôle de flux optionnel. L'horloge CLK n'existe qu'en USART synchrone ; la parité est un bit optionnel de la trame ; l'UART n'utilise pas d'adresse.",
+   "cours": "Cours II p. 32-33"
+  },
+  {
+   "id": "II-29",
+   "chapitre": "II",
+   "type": "raisonnement",
+   "question": "Combien de temps faut-il pour envoyer les 3 caractères « AEM » en UART 8N1 à 9600 bauds ?",
+   "choix": [
+    "Environ 2,5 ms",
+    "Environ 0,3 ms",
+    "Environ 3,1 ms",
+    "Environ 31 ms"
+   ],
+   "bonne": 2,
+   "explication": "Chaque caractère fait 10 bits (start + 8 données + stop) : 3 × 10 = 30 bits. Un bit dure 1/9600 ≈ 104 µs, donc 30 × 104 µs ≈ 3,125 ms. 2,5 ms oublie les bits de start et de stop (24 bits seulement).",
+   "cours": "Cours II p. 33-34",
+   "figure": {
+    "src": "figures/trame-uart.svg",
+    "alt": "Trame UART : repos à 1, bit de start à 0, bits d0 à d7, bit de stop à 1"
+   }
+  },
+  {
+   "id": "II-30",
+   "chapitre": "II",
+   "type": "compréhension",
+   "question": "Pourquoi un bus I2C a-t-il besoin de résistances de tirage (pull-up) ?",
+   "choix": [
+    "Elles limitent le courant quand deux maîtres émettent un 1 en même temps",
+    "Elles fixent l'adresse matérielle de 7 bits de chaque esclave",
+    "Elles filtrent les parasites pour augmenter la longueur du bus",
+    "Les sorties sont à drain ouvert : elles ne savent que tirer la ligne à 0"
+   ],
+   "bonne": 3,
+   "explication": "Les sorties I2C sont à drain ouvert : elles imposent un 0 ou laissent la ligne flottante. Le 1 vient des résistances de tirage. C'est un « ET câblé » où le 0 est l'état dominant.",
+   "cours": "Cours II p. 36"
+  },
+  {
+   "id": "II-31",
+   "chapitre": "II",
+   "type": "connaissance",
+   "question": "Comment le maître signale-t-il une condition START sur un bus I2C ?",
+   "choix": [
+    "SDA passe de 1 à 0 pendant que SCL est à 1",
+    "SCL passe de 1 à 0 pendant que SDA est à 1",
+    "SDA passe de 0 à 1 pendant que SCL est à 1",
+    "SDA et SCL passent à 0 au même instant"
+   ],
+   "bonne": 0,
+   "explication": "START et STOP sont les seuls moments où SDA change pendant que SCL est haut. START : front descendant de SDA ; STOP : front montant de SDA, toujours avec SCL à 1. Pendant les données, SDA ne change que lorsque SCL est bas.",
+   "cours": "Cours II p. 37"
+  },
+  {
+   "id": "II-32",
+   "chapitre": "II",
+   "type": "raisonnement",
+   "question": "D'après le profil de mission du schéma (cycle d'une minute), quelle autonomie offre une pile CR2032 de 210 mAh ?",
+   "choix": [
+    "Environ 2053 jours",
+    "Environ 85 jours",
+    "Environ 10 ans",
+    "Environ 10 heures"
+   ],
+   "bonne": 1,
+   "explication": "I_moy = (2 ms × 20 mA + 6 ms × 10 mA + 0,8 ms × 50 mA) / 60 s + 100 µA ≈ 0,67 + 1 + 0,67 + 100 ≈ 102,3 µA. Durée = 210 mAh / 0,1023 mA ≈ 2053 h ≈ 85 jours, environ 3 mois. 2053 jours oublie de diviser par 24, 10 ans oublie la veille et 10 heures prend le courant d'acquisition.",
+   "cours": "Cours II p. 44-45",
+   "figure": {
+    "src": "figures/profil-mission.svg",
+    "alt": "Profil de mission : veille à 100 µA, acquisition 20 mA pendant 2 ms, traitement 10 mA pendant 6 ms, émission 50 mA pendant 0,8 ms, cycle de 1 min"
+   }
+  },
+  {
+   "id": "II-33",
+   "chapitre": "II",
+   "type": "compréhension",
+   "question": "Sur un profil de mission (courant en fonction du temps), quelles sont les deux pistes du cours pour gagner en autonomie ?",
+   "choix": [
+    "Augmenter la tension d'alimentation et la fréquence d'horloge du MCU",
+    "Émettre plus souvent, avec des trames plus courtes à chaque fois",
+    "Baisser la consommation de chaque phase et raccourcir les temps actifs",
+    "Supprimer la veille pour éviter les réveils fréquents par la RTC"
+   ],
+   "bonne": 2,
+   "explication": "Objectif du cours : réduire les « aires » courant × durée du profil, en diminuant la consommation intrinsèque et en optimisant les temps de traitement (rapports cycliques). Augmenter la tension ou la fréquence fait l'inverse.",
+   "cours": "Cours II p. 44"
+  },
+  {
+   "id": "II-34",
+   "chapitre": "II",
+   "type": "raisonnement",
+   "question": "La RTC range l'heure au format BCD. Comment le registre code-t-il 57 secondes ?",
+   "choix": [
+    "0011 1001",
+    "0111 0101",
+    "0001 0111",
+    "0101 0111"
+   ],
+   "bonne": 3,
+   "explication": "En BCD (Binary Coded Decimal), chaque chiffre décimal est codé sur 4 bits : 5 = 0101 et 7 = 0111, d'où 0101 0111. 0011 1001 est le binaire naturel de 57 (39h) ; 0111 0101 inverse les deux chiffres.",
+   "cours": "Cours II p. 48-50"
+  },
+  {
+   "id": "II-35",
+   "chapitre": "II",
+   "type": "connaissance",
+   "question": "En mode Shutdown, comment le microcontrôleur peut-il être réveillé ?",
+   "choix": [
+    "Par un circuit externe que commande une sortie de la RTC",
+    "Par une interruption de l'un de ses périphériques",
+    "Par une broche externe (EXTI), comme en mode Stop",
+    "Par la RTC interne, qui reste alimentée comme en Standby"
+   ],
+   "bonne": 0,
+   "explication": "En Shutdown, aucun réveil n'est possible sans l'aide d'un circuit externe piloté par une broche de sortie de la RTC. En Sleep, toute interruption réveille ; en Stop, une EXTI ou certains périphériques de communication ; en Standby, la broche WKUP, le reset ou la RTC.",
+   "cours": "Cours II p. 56-59"
+  },
+  {
+   "id": "II-36",
+   "chapitre": "II",
+   "type": "raisonnement",
+   "question": "Le module Dragino LSN50 consomme 125 mA en émission à +20 dBm et 44 mA à +14 dBm. Pour une même durée d'émission, combien de fois moins de charge consomme-t-il à +14 dBm ?",
+   "choix": [
+    "Environ 6 fois",
+    "Environ 2,8 fois",
+    "Environ 4 fois",
+    "Environ 1,4 fois"
+   ],
+   "bonne": 1,
+   "explication": "La charge vaut courant × durée : à durée égale, 125 / 44 ≈ 2,8. Ce n'est pas le rapport des puissances rayonnées (6 dB, soit × 4) : le courant consommé par l'émetteur ne suit pas exactement la puissance de sortie.",
+   "cours": "Cours II p. 7"
   },
   {
    "id": "III-01",
@@ -1066,7 +1420,11 @@
    ],
    "bonne": 0,
    "explication": "R_km = √(10^(140/10) / (1755 × 868²)) = √(10^14 / 1,322 × 10^9) = √75 600 ≈ 275 km. Avec 157 dB on trouverait 1947 km ; 20 dB de bilan en moins divisent la portée par 10.",
-   "cours": "Cours III p. 43"
+   "cours": "Cours III p. 43",
+   "figure": {
+    "src": "figures/lien-radio.svg",
+    "alt": "Liaison radio : émetteur PE, antenne GE, affaiblissement α dans l'air, antenne GR, récepteur PR"
+   }
   },
   {
    "id": "III-20",
@@ -1082,6 +1440,250 @@
    "bonne": 2,
    "explication": "α = 10 log(1755 × R² × f²) = 20 log f + constante. 20 log(2400 / 868) = 20 log 2,76 ≈ 8,8 dB.",
    "cours": "Cours III p. 42"
+  },
+  {
+   "id": "III-21",
+   "chapitre": "III",
+   "type": "connaissance",
+   "question": "Sur le graphique débit / portée des standards sans fil, où se placent les LPWAN (LoRa, Sigfox, NB-IoT, LTE-M) ?",
+   "choix": [
+    "Grande portée et très haut débit",
+    "Courte portée et haut débit",
+    "Grande portée et faible débit",
+    "Courte portée et faible débit"
+   ],
+   "bonne": 2,
+   "explication": "Les LPWAN visent la longue portée avec un faible débit et une faible consommation. Le Wi-Fi offre un haut débit à courte portée, les réseaux cellulaires (2G à 5G) la portée et le débit, le NFC une très courte portée.",
+   "cours": "Cours III p. 4 ; V p. 4"
+  },
+  {
+   "id": "III-22",
+   "chapitre": "III",
+   "type": "raisonnement",
+   "question": "Une porteuse à 10 kHz est modulée en amplitude, sans porteuse, par un sinus de 100 Hz. Quelle largeur de bande occupe le signal ?",
+   "choix": [
+    "100 Hz",
+    "10 kHz",
+    "10,1 kHz",
+    "200 Hz"
+   ],
+   "bonne": 3,
+   "explication": "Les raies sont à fc − fm = 9,9 kHz et fc + fm = 10,1 kHz : la bande occupée vaut 2 fm = 200 Hz. 10,1 kHz est la position de la raie haute, pas une largeur.",
+   "cours": "Cours III p. 12"
+  },
+  {
+   "id": "III-23",
+   "chapitre": "III",
+   "type": "raisonnement",
+   "question": "Un signal FM a une fréquence modulante fm = 1 kHz et une déviation de fréquence Δf ≈ 3,1 kHz. Que vaut l'indice de modulation β ?",
+   "choix": [
+    "Environ 3,1",
+    "Environ 0,32",
+    "Environ 4,1",
+    "Environ 19,5"
+   ],
+   "bonne": 0,
+   "explication": "β = Δf / fm = 3,1 kHz / 1 kHz ≈ 3,1. C'est l'exemple du cours (Am = 20 000, Δf = Am / 2π ≈ 3,1 kHz). 0,32 inverse le rapport ; 19,5 multiplie encore par 2π.",
+   "cours": "Cours III p. 15"
+  },
+  {
+   "id": "III-24",
+   "chapitre": "III",
+   "type": "compréhension",
+   "question": "Que faut-il pour réduire la bande de fréquences occupée par un signal FM ?",
+   "choix": [
+    "Un indice β grand et une porteuse fc la plus basse possible",
+    "Un indice β petit et une fréquence fm petite devant fc",
+    "Une amplitude de porteuse Ac plus faible, à β inchangé",
+    "Une fréquence modulante fm proche de la porteuse fc"
+   ],
+   "bonne": 1,
+   "explication": "Le cours conclut : pour réduire la bande, β doit être petit et fm petite devant fc. Plus on veut transmettre vite (fm élevée), plus il faut de bande. L'amplitude Ac ne change pas la largeur du spectre.",
+   "cours": "Cours III p. 16-17"
+  },
+  {
+   "id": "III-25",
+   "chapitre": "III",
+   "type": "connaissance",
+   "question": "Qu'appelle-t-on une modulation en quadrature (IQ) ?",
+   "choix": [
+    "Une modulation où l'information est portée par la seule amplitude",
+    "Une modulation qui utilise quatre fréquences porteuses différentes",
+    "L'information répartie sur deux porteuses décalées de 90° (I et Q)",
+    "Un codage qui répète chaque bit quatre fois pour corriger les erreurs"
+   ],
+   "bonne": 2,
+   "explication": "En modulation IQ, l'information binaire est répartie sur deux porteuses de même fréquence, l'une en sinus (I), l'autre en cosinus (Q), donc décalées de 90°. La QPSK en est un exemple, avec 2 bits par symbole.",
+   "cours": "Cours III p. 18, p. 27"
+  },
+  {
+   "id": "III-26",
+   "chapitre": "III",
+   "type": "compréhension",
+   "question": "À quoi la modulation BPSK est-elle équivalente selon le cours ?",
+   "choix": [
+    "À une FSK dont les deux fréquences sont très proches",
+    "À une QPSK qui transporterait 2 bits à chaque symbole",
+    "À une OOK dont la porteuse reste allumée en permanence",
+    "À une ASK d'amplitudes +1 et −1, soit une AM sans porteuse"
+   ],
+   "bonne": 3,
+   "explication": "En BPSK, un bit donne la porteuse et l'autre la porteuse inversée (phase de 180°). Cela revient à multiplier la porteuse par +1 ou −1 : une ASK à amplitudes {1, −1}, c'est-à-dire une AM sans porteuse. Le lobe principal fait 2 fm.",
+   "cours": "Cours III p. 22"
+  },
+  {
+   "id": "III-27",
+   "chapitre": "III",
+   "type": "raisonnement",
+   "question": "Une liaison FSK transmet D = 1 kbit/s avec un indice β = 3. Quelle bande occupe-t-elle ?",
+   "choix": [
+    "5 kHz",
+    "3 kHz",
+    "4 kHz",
+    "2 kHz"
+   ],
+   "bonne": 0,
+   "explication": "BW = 2 × (D + Δf) = D × (2 + β) = 1 kHz × 5 = 5 kHz, avec Δf = β D / 2 = 1,5 kHz (exemple du cours). 2 kHz ne compte que 2D, sans la déviation ; 3 kHz ne garde que βD.",
+   "cours": "Cours III p. 23"
+  },
+  {
+   "id": "III-28",
+   "chapitre": "III",
+   "type": "compréhension",
+   "question": "Qu'apporte le filtre gaussien de la GFSK par rapport à une FSK classique ?",
+   "choix": [
+    "Il double le débit en transportant 2 bits dans chaque symbole",
+    "Il adoucit les sauts de fréquence, ce qui réduit la bande occupée",
+    "Il supprime la porteuse pour économiser de l'énergie à l'émission",
+    "Il chiffre les données pour qu'elles ne soient pas interceptées"
+   ],
+   "bonne": 1,
+   "explication": "En GFSK, le signal binaire passe par un filtre gaussien avant de moduler la fréquence : les transitions deviennent progressives et le spectre plus étroit. Le cours cite le Bluetooth (GFSK) et le GSM 2G (GMSK).",
+   "cours": "Cours III p. 25-26"
+  },
+  {
+   "id": "III-29",
+   "chapitre": "III",
+   "type": "connaissance",
+   "question": "Le Bluetooth (version 1) module en GFSK dans la bande 2,4 à 2,4835 GHz. Comment cette bande est-elle découpée ?",
+   "choix": [
+    "En 14 canaux de 22 MHz",
+    "En 3 canaux de 200 kHz",
+    "En 79 canaux de 1 MHz",
+    "En 8 canaux de 125 kHz"
+   ],
+   "bonne": 2,
+   "explication": "Bluetooth v1 : 79 canaux de 1 MHz, débit 1 Mbit/s, β ≈ 0,3 (Δf ≈ 300 kHz). Les 14 canaux de 22 MHz sont ceux du Wi-Fi ; 125 kHz et 200 kHz évoquent les canaux LoRa.",
+   "cours": "Cours III p. 26"
+  },
+  {
+   "id": "III-30",
+   "chapitre": "III",
+   "type": "connaissance",
+   "question": "Quel est le plan de fréquences du Wi-Fi entre 2,4 et 2,5 GHz ?",
+   "choix": [
+    "79 canaux de 1 MHz",
+    "3 canaux de 125 kHz",
+    "40 canaux de 2 MHz",
+    "14 canaux de 22 MHz"
+   ],
+   "bonne": 3,
+   "explication": "Exemple du cours : le Wi-Fi à 2,4 GHz compte 14 canaux de 22 MHz de large entre 2,4 et 2,5 GHz, qui se chevauchent forcément (14 × 22 MHz dépasse 100 MHz). 79 canaux de 1 MHz, c'est le Bluetooth v1.",
+   "cours": "Cours III p. 30"
+  },
+  {
+   "id": "III-31",
+   "chapitre": "III",
+   "type": "raisonnement",
+   "question": "En CDMA, un récepteur reçoit sur un symbole la somme (2, 0, 2, 0). Son code est (1, −1, 1, −1). Quel bit retrouve-t-il ?",
+   "choix": [
+    "Le bit 1",
+    "Le bit 0",
+    "Indéterminé : collision",
+    "On ne peut pas savoir"
+   ],
+   "bonne": 0,
+   "explication": "On multiplie terme à terme par son code et on somme : 2×1 + 0×(−1) + 2×1 + 0×(−1) = 4, puis on divise par la longueur du code : 4/4 = 1, donc le bit 1. Un résultat de 0/4 = 0 aurait donné le bit 0. L'orthogonalité des codes rend les autres émetteurs invisibles.",
+   "cours": "Cours III p. 34-35"
+  },
+  {
+   "id": "III-32",
+   "chapitre": "III",
+   "type": "raisonnement",
+   "question": "Une résistance R = 1 Ω reçoit une tension formée d'un continu V = 2 V et d'un sinus d'amplitude v = 2 V. Quelle puissance moyenne dissipe-t-elle ?",
+   "choix": [
+    "4 W",
+    "6 W",
+    "8 W",
+    "16 W"
+   ],
+   "bonne": 1,
+   "explication": "Par superposition, P = V²/R + ½ v²/R = 4 + 2 = 6 W. 8 W oublie le ½ du régime sinusoïdal, 16 W additionne les tensions avant d'élever au carré, 4 W ne garde que le continu.",
+   "cours": "Cours III p. 36-37"
+  },
+  {
+   "id": "III-33",
+   "chapitre": "III",
+   "type": "compréhension",
+   "question": "Si l'amplitude de la tension aux bornes d'une même résistance double, de combien la puissance augmente-t-elle en dB ?",
+   "choix": [
+    "+3 dB",
+    "+2 dB",
+    "+6 dB",
+    "+12 dB"
+   ],
+   "bonne": 2,
+   "explication": "La puissance varie comme v² : amplitude × 2 donne puissance × 4, soit 10 log 4 ≈ +6 dB (ou 20 log 2). +3 dB correspond à une puissance doublée, c'est-à-dire une amplitude multipliée par √2.",
+   "cours": "Cours III p. 38"
+  },
+  {
+   "id": "III-34",
+   "chapitre": "III",
+   "type": "raisonnement",
+   "question": "Combien de milliwatts correspondent à −10 dBm ?",
+   "choix": [
+    "−10 mW",
+    "0,01 mW",
+    "10 mW",
+    "0,1 mW"
+   ],
+   "bonne": 3,
+   "explication": "p_mW = 10^(P_dBm/10) = 10^(−1) = 0,1 mW. Une puissance en mW n'est pas négative ; +10 dBm vaut 10 mW et −20 dBm 0,01 mW.",
+   "cours": "Cours III p. 39"
+  },
+  {
+   "id": "III-35",
+   "chapitre": "III",
+   "type": "connaissance",
+   "question": "Qu'appelle-t-on la sensibilité d'un récepteur radio ?",
+   "choix": [
+    "Le RSSI minimal pour que le récepteur fonctionne bien",
+    "La puissance d'émission maximale que l'antenne supporte",
+    "Le rapport entre la puissance reçue et celle du bruit",
+    "La largeur de bande que le récepteur peut démoduler"
+   ],
+   "bonne": 0,
+   "explication": "Le cours définit la sensibilité comme le RSSI minimal pour un bon fonctionnement du récepteur (−137 dBm pour le SX1272). Le RSSI est la puissance reçue mesurée, le SNR le rapport P_R / P_N.",
+   "cours": "Cours III p. 40, p. 44"
+  },
+  {
+   "id": "III-36",
+   "chapitre": "III",
+   "type": "raisonnement",
+   "question": "Un émetteur LoRa à +14 dBm, avec des antennes de gain nul, transmet à 868 MHz sur 1 km. Quelle puissance arrive au récepteur ?",
+   "choix": [
+    "Environ −91 dBm",
+    "Environ −77 dBm",
+    "Environ +105 dBm",
+    "Environ −137 dBm"
+   ],
+   "bonne": 1,
+   "explication": "λ = c/f ≈ 0,35 m, α = 22 + 20 log(1000 / 0,35) ≈ 91 dB (exemple du cours). P_R = P_E + G_E + G_R − α ≈ 14 + 0 + 0 − 91 ≈ −77 dBm, bien au-dessus d'une sensibilité de −137 dBm. −91 dBm oublie la puissance d'émission ; +105 dBm ajoute l'affaiblissement au lieu de le retrancher.",
+   "cours": "Cours III p. 41-42",
+   "figure": {
+    "src": "figures/lien-radio.svg",
+    "alt": "Liaison radio : émetteur PE, antenne GE, affaiblissement α dans l'air, antenne GR, récepteur PR"
+   }
   },
   {
    "id": "IV-01",
@@ -1351,7 +1953,11 @@
    ],
    "bonne": 0,
    "explication": "« # » prend le niveau et tous ceux en dessous ; « + » remplace un seul niveau. House/# recevrait toute la maison ; +/Bathroom ne correspond qu'à des topics de 2 niveaux.",
-   "cours": "Cours IV p. 34"
+   "cours": "Cours IV p. 34",
+   "figure": {
+    "src": "figures/mqtt-topics.svg",
+    "alt": "Arbre des topics MQTT : House, puis Livingroom, Bedroom, Bathroom, puis leurs capteurs"
+   }
   },
   {
    "id": "IV-19",
@@ -1382,6 +1988,355 @@
    "bonne": 0,
    "explication": "Série temporelle = une entité dans le temps ; transversales = plusieurs entités à un instant donné ; panel = plusieurs entités à plusieurs instants.",
    "cours": "Cours IV p. 53-55"
+  },
+  {
+   "id": "IV-21",
+   "chapitre": "IV",
+   "type": "connaissance",
+   "question": "Dans l'URL http://162.38.112.100/iot_class/basic.html, que désigne 162.38.112.100 ?",
+   "choix": [
+    "Le chemin de la page sur le serveur",
+    "L'adresse MAC du client",
+    "L'adresse IP du serveur web",
+    "Le numéro de port du serveur"
+   ],
+   "bonne": 2,
+   "explication": "URL = Uniform Resource Locator. 162.38.112.100 est l'adresse IP du serveur et /iot_class/basic.html le chemin de la page sur ce serveur. Le navigateur envoie une requête GET, le serveur renvoie la page en HTML et le navigateur l'affiche.",
+   "cours": "Cours IV p. 10"
+  },
+  {
+   "id": "IV-22",
+   "chapitre": "IV",
+   "type": "compréhension",
+   "question": "Quelle différence le cours fait-il entre une page dynamique en PHP et une page dynamique en JavaScript ?",
+   "choix": [
+    "PHP tourne dans le navigateur, JavaScript sur le serveur",
+    "Les deux tournent sur le serveur, mais PHP est plus rapide",
+    "Les deux tournent dans le navigateur, seul l'affichage change",
+    "PHP tourne sur le serveur, JavaScript dans le navigateur"
+   ],
+   "bonne": 3,
+   "explication": "Approche n° 1 : le serveur exécute le PHP et renvoie une page en apparence statique ; l'utilisateur ne voit pas comment elle a été construite. Approche n° 2 : le serveur renvoie la page et ses scripts JavaScript, exécutés côté client, dans le navigateur ; l'utilisateur peut lire le code source.",
+   "cours": "Cours IV p. 12-13"
+  },
+  {
+   "id": "IV-23",
+   "chapitre": "IV",
+   "type": "compréhension",
+   "question": "Pourquoi ne peut-on pas mettre les 6 octets binaires de la station météo directement dans une URL, en lisant chaque octet comme un caractère ASCII ?",
+   "choix": [
+    "Parce que la plupart ne sont pas des caractères imprimables",
+    "Parce qu'un octet ne peut pas dépasser la valeur 127",
+    "Parce qu'une URL n'accepte pas plus de 6 caractères de données",
+    "Parce que le serveur web n'accepte que des données en JSON"
+   ],
+   "bonne": 0,
+   "explication": "Les octets 0x01, 0x41, 0x4C, 0x90, 0x04, 0x1A donnent SOH, « A », « L », un caractère ASCII étendu, EOT et SUB : seuls 2 sont imprimables. D'où le besoin d'une table de caractères alphanumériques compatible URL, qui garde une longueur maîtrisée : le Base64.",
+   "cours": "Cours IV p. 18"
+  },
+  {
+   "id": "IV-24",
+   "chapitre": "IV",
+   "type": "connaissance",
+   "question": "En C, combien d'octets occupent un short int et un float ?",
+   "choix": [
+    "1 et 2 octets",
+    "2 et 4 octets",
+    "4 et 8 octets",
+    "2 et 2 octets"
+   ],
+   "bonne": 1,
+   "explication": "Types standards rappelés dans le cours : char = 8 bits (1 octet), short int = 16 bits (2 octets), int = 32 bits (4 octets), float = 32 bits (4 octets).",
+   "cours": "Cours IV p. 21"
+  },
+  {
+   "id": "IV-25",
+   "chapitre": "IV",
+   "type": "raisonnement",
+   "question": "Quel est l'encodage Base64 des 2 octets 0x27 0x11 ?",
+   "choix": [
+    "JxE",
+    "JxE==",
+    "JxE=",
+    "Jx=="
+   ],
+   "bonne": 2,
+   "explication": "16 bits complétés par des 0 jusqu'à 18 bits : 001001 110001 000100 → 9, 49, 4 → J, x, E. On complète à 4 caractères avec un « = » : JxE=. Un seul octet restant donnerait « == ».",
+   "cours": "Cours IV p. 20, p. 23"
+  },
+  {
+   "id": "IV-26",
+   "chapitre": "IV",
+   "type": "raisonnement",
+   "question": "Une température de 32,4 °C est codée en °C × 1000 sur 2 octets (entier non signé). Quels octets envoie-t-on, en big-endian ?",
+   "choix": [
+    "0x90 0x7E",
+    "0x00 0x20",
+    "0x01 0x44",
+    "0x7E 0x90"
+   ],
+   "bonne": 3,
+   "explication": "32,4 × 1000 = 32 400 = 126 × 256 + 144 = 0x7E90 : on envoie 0x7E puis 0x90 (poids fort d'abord). 0x90 0x7E est l'ordre little-endian, 0x0144 = 324 vient d'un facteur 10, 0x0020 = 32 oublie les décimales. C'est l'exercice du cours (message « Akt+kA== »).",
+   "cours": "Cours IV p. 24, p. 26"
+  },
+  {
+   "id": "IV-27",
+   "chapitre": "IV",
+   "type": "raisonnement",
+   "question": "Dans Node-RED, la fonction calcule (buf[2] << 8 | buf[3]) / 1000 avec buf[2] = 0x2F et buf[3] = 0x44. Quelle température obtient-on ?",
+   "choix": [
+    "12,1 °C",
+    "17,5 °C",
+    "0,115 °C",
+    "121 °C"
+   ],
+   "bonne": 0,
+   "explication": "buf[2] << 8 décale l'octet de poids fort de 8 bits, et « | buf[3] » ajoute l'octet de poids faible : 0x2F44 = 47 × 256 + 68 = 12 100, puis / 1000 = 12,1 °C. 17,5 °C vient de l'ordre inverse (0x442F), 0,115 °C de la simple somme 47 + 68.",
+   "cours": "Cours IV p. 41"
+  },
+  {
+   "id": "IV-28",
+   "chapitre": "IV",
+   "type": "connaissance",
+   "question": "Dans un objet JSON, que signifie une valeur null, comme dans « phone » : null ?",
+   "choix": [
+    "Le nombre 0, écrit sous une autre forme",
+    "L'absence de donnée pour cette clé",
+    "Une chaîne de caractères vide « »",
+    "Une erreur de syntaxe dans l'objet"
+   ],
+   "bonne": 1,
+   "explication": "En JSON, null indique l'absence de donnée. Les autres valeurs possibles sont la chaîne, le nombre (entier ou réel), le booléen, l'objet JSON et le tableau.",
+   "cours": "Cours IV p. 27-28"
+  },
+  {
+   "id": "IV-29",
+   "chapitre": "IV",
+   "type": "compréhension",
+   "question": "Pourquoi MQTT est-il devenu très courant en IoT ?",
+   "choix": [
+    "Il assure une latence inférieure à la milliseconde sur Internet",
+    "Il remplace TCP/IP par un protocole radio bien plus économe",
+    "Il est léger, adapté aux petits systèmes et aux faibles débits",
+    "Il chiffre les messages sans qu'il faille échanger de clé"
+   ],
+   "bonne": 2,
+   "explication": "Le cours le décrit comme un protocole à faible surcoût (léger), bien adapté aux petits systèmes embarqués à bande passante limitée, et robuste aux latences du réseau. Il fonctionne au-dessus de TCP/IP.",
+   "cours": "Cours IV p. 29-30"
+  },
+  {
+   "id": "IV-30",
+   "chapitre": "IV",
+   "type": "compréhension",
+   "question": "Quel est l'intérêt de la QoS 0 en MQTT, et quel est son défaut ?",
+   "choix": [
+    "Elle évite les doublons, mais elle demande 4 échanges par message",
+    "Elle garantit la réception, mais elle peut créer des doublons",
+    "Elle chiffre le message, mais elle ralentit le broker MQTT",
+    "La plus économe en énergie, mais la réception n'est pas garantie"
+   ],
+   "bonne": 3,
+   "explication": "QoS 0, « at most once » ou « fire and forget » : un seul envoi, sans acquittement. C'est la plus efficace en énergie, mais la réception n'est pas garantie. La QoS 1 garantit la réception avec un risque de doublons, la QoS 2 évite les doublons en 4 échanges.",
+   "cours": "Cours IV p. 31-33"
+  },
+  {
+   "id": "IV-31",
+   "chapitre": "IV",
+   "type": "compréhension",
+   "question": "En QoS 2, que fait l'émetteur si son message Publish, ou l'accusé Received, se perd ?",
+   "choix": [
+    "Il renvoie le même message avec un drapeau de doublon",
+    "Il abandonne le message et passe au suivant",
+    "Il passe automatiquement en QoS 0 pour ce message",
+    "Il demande au broker de vider la file des messages en attente"
+   ],
+   "bonne": 0,
+   "explication": "Tant que Publish ou Received se perdent, l'émetteur renvoie le même message marqué comme doublon (duplicate). Après Release, le broker fait le ménage ; après Completed, le nœud fait de même. Le même mécanisme existe entre le broker et les abonnés.",
+   "cours": "Cours IV p. 33"
+  },
+  {
+   "id": "IV-32",
+   "chapitre": "IV",
+   "type": "raisonnement",
+   "question": "Avec l'arborescence de topics du schéma, quel abonnement reçoit la température de toutes les pièces, et seulement elle ?",
+   "choix": [
+    "House/#/Temperature",
+    "House/+/Temperature",
+    "House/Temperature",
+    "+/Temperature"
+   ],
+   "bonne": 1,
+   "explication": "« + » remplace exactement un niveau : House/+/Temperature correspond à House/Livingroom/Temperature, House/Bedroom/Temperature et House/Bathroom/Temperature. « # » n'est permis qu'en dernier niveau ; House/Temperature et +/Temperature ne visent que des topics de 2 niveaux.",
+   "cours": "Cours IV p. 34",
+   "figure": {
+    "src": "figures/mqtt-topics.svg",
+    "alt": "Arbre des topics MQTT : House, puis Livingroom, Bedroom, Bathroom, puis leurs capteurs"
+   }
+  },
+  {
+   "id": "IV-33",
+   "chapitre": "IV",
+   "type": "compréhension",
+   "question": "Plutôt qu'un topic MQTT par capteur, que peut publier un nœud qui mesure température, pression et humidité ?",
+   "choix": [
+    "Impossible : MQTT impose un topic par grandeur mesurée",
+    "Les 3 mesures dans le nom du topic, sans contenu de message",
+    "Un seul message qui regroupe les 3 mesures (JSON ou Base64)",
+    "Un message vide, le broker allant lire lui-même les capteurs"
+   ],
+   "bonne": 2,
+   "explication": "Un message MQTT peut contenir à peu près tout, par exemple plusieurs mesures combinées dans une chaîne JSON ou Base64, publiées sur un seul topic comme House/Livingroom/Sensor_Data.",
+   "cours": "Cours IV p. 35"
+  },
+  {
+   "id": "IV-34",
+   "chapitre": "IV",
+   "type": "connaissance",
+   "question": "Quelle adresse IP désigne la machine elle-même (localhost), par exemple quand Node-RED joint un broker installé sur le même serveur ?",
+   "choix": [
+    "192.168.0.1",
+    "162.38.112.100",
+    "255.255.255.255",
+    "127.0.0.1"
+   ],
+   "bonne": 3,
+   "explication": "localhost = 127.0.0.1, l'adresse de boucle locale de la machine. Dans le cours, Node-RED et le broker Mosquitto (port 1883) tournent sur le même serveur, joignable depuis Internet à l'adresse 162.38.112.100.",
+   "cours": "Cours IV p. 43-45"
+  },
+  {
+   "id": "IV-35",
+   "chapitre": "IV",
+   "type": "compréhension",
+   "question": "Quelle limite a le stockage des mesures dans un simple fichier CSV ?",
+   "choix": [
+    "Pas de requêtes avancées ni d'outils pour explorer les données",
+    "Il ne peut contenir que des nombres entiers sans décimales",
+    "Il ne peut pas être ouvert par un tableur ni lu par Python",
+    "Il est limité à un millier de lignes par fichier enregistré"
+   ],
+   "bonne": 0,
+   "explication": "Le CSV est le moyen le plus simple de stocker des données simples, mais il n'a pas de mécanisme intégré de requêtes avancées ni d'exploration. Une base de données structure les données (par topic, nœud, capteur, horodatage) et permet des requêtes.",
+   "cours": "Cours IV p. 47-49"
+  },
+  {
+   "id": "IV-36",
+   "chapitre": "IV",
+   "type": "compréhension",
+   "question": "Selon le cours, qu'est-ce qui distingue InfluxDB d'une base SQL comme MySQL ?",
+   "choix": [
+    "InfluxDB est relationnelle et accepte des mises à jour au hasard",
+    "InfluxDB vise les séries temporelles : ajout seul, ordre important",
+    "InfluxDB ne stocke que des fichiers CSV horodatés sur le disque",
+    "InfluxDB ne sait pas répondre à des requêtes, contrairement à SQL"
+   ],
+   "bonne": 1,
+   "explication": "SQL (MySQL, MariaDB) : base généraliste et relationnelle, avec des mises à jour aléatoires pendant le fonctionnement. InfluxDB : base de séries temporelles pour l'IoT, où l'ordre compte et où l'on ne fait qu'ajouter (append only), plus performante sur de gros volumes horodatés.",
+   "cours": "Cours IV p. 49, p. 56"
+  },
+  {
+   "id": "IV-37",
+   "chapitre": "IV",
+   "type": "connaissance",
+   "question": "Que faut-il associer à chaque mesure d'une série temporelle, qu'elle soit prise à intervalle régulier ou sur événement ?",
+   "choix": [
+    "Une adresse MAC d'origine",
+    "Un code CRC sur 2 octets",
+    "Un horodatage (timestamp)",
+    "Un numéro de port TCP"
+   ],
+   "bonne": 2,
+   "explication": "Une série temporelle est une suite d'observations répétées dans le temps ; l'axe des abscisses est le temps. Les mesures peuvent être régulières ou irrégulières (événements, journaux) : chacune doit donc avoir son horodatage.",
+   "cours": "Cours IV p. 51"
+  },
+  {
+   "id": "IV-38",
+   "chapitre": "IV",
+   "type": "connaissance",
+   "question": "Dans InfluxDB, que fixe la « retention policy » d'un bucket ?",
+   "choix": [
+    "Le nombre maximal de capteurs autorisés dans le bucket",
+    "Le port réseau sur lequel le bucket reçoit les données",
+    "La liste des utilisateurs qui ont le droit de lire les mesures",
+    "La durée de conservation des données (par exemple 1 mois)"
+   ],
+   "bonne": 3,
+   "explication": "Modèle de données InfluxDB : organisation > bucket, avec sa politique de rétention (durée de conservation, 1 mois dans l'exemple) > measurement > tags, fields et timestamps. InfluxDB écoute sur le port 8086.",
+   "cours": "Cours IV p. 57"
+  },
+  {
+   "id": "IV-39",
+   "chapitre": "IV",
+   "type": "raisonnement",
+   "question": "Une pression mesurée entre 800 et 1200 hPa doit être envoyée comme un entier non signé. Combien d'octets faut-il au minimum ?",
+   "choix": [
+    "2 octets",
+    "1 octet",
+    "3 octets",
+    "4 octets"
+   ],
+   "bonne": 0,
+   "explication": "Un octet ne code que 0 à 255 : c'est insuffisant pour 1200. Deux octets (0 à 65 535) suffisent, d'où le choix du cours : température sur 1 octet (0 à 50 °C), pression sur 2 octets, humidité sur 1 octet, soit 4 octets de charge utile.",
+   "cours": "Cours IV p. 59"
+  },
+  {
+   "id": "IV-40",
+   "chapitre": "IV",
+   "type": "compréhension",
+   "question": "Une requête Flux enchaîne from(bucket: my_bucket), puis range(...), puis un filter sur le measurement my_sensors. Que fait ce filter ?",
+   "choix": [
+    "Il efface définitivement le measurement my_sensors",
+    "Il ne garde que les points du measurement my_sensors",
+    "Il crée un nouveau bucket nommé my_sensors sur le disque",
+    "Il trie les points par ordre d'arrivée sur le serveur"
+   ],
+   "bonne": 1,
+   "explication": "Flux enchaîne des étapes avec |> : from choisit le bucket, range la période, filter ne garde que les lignes qui vérifient la condition (ici le measurement my_sensors), puis viennent aggregateWindow, sort, group… Flux est le langage de requêtes d'InfluxDB.",
+   "cours": "Cours IV p. 63"
+  },
+  {
+   "id": "IV-41",
+   "chapitre": "IV",
+   "type": "connaissance",
+   "question": "Qu'est-ce que Telegraf dans la chaîne IoT du cours ?",
+   "choix": [
+    "Le langage de requêtes utilisé pour interroger InfluxDB",
+    "Un broker MQTT plus léger que Mosquitto pour les petits capteurs",
+    "Un service de collecte, avec des plugins d'entrée et de sortie",
+    "Un outil de tableaux de bord concurrent de Grafana"
+   ],
+   "bonne": 2,
+   "explication": "Telegraf est un service qui tourne en permanence, avec des plugins d'entrée (par exemple mqtt_consumer abonné à Home/#), de traitement et d'agrégation, et de sortie (par exemple influxdb_v2 vers le port 8086). Il peut transformer un topic MQTT en tag. Flux est le langage de requêtes, Grafana l'outil de tableaux de bord.",
+   "cours": "Cours IV p. 66-69"
+  },
+  {
+   "id": "IV-42",
+   "chapitre": "IV",
+   "type": "compréhension",
+   "question": "Pourquoi utiliser Grafana alors que Node-RED et InfluxDB proposent déjà des tableaux de bord ?",
+   "choix": [
+    "Parce que Node-RED ne sait pas lire les messages MQTT",
+    "Parce que seul Grafana peut stocker les mesures sur le disque",
+    "Parce qu'InfluxDB ne peut fonctionner qu'avec Grafana installé",
+    "Parce que leurs options de visualisation sont très limitées"
+   ],
+   "bonne": 3,
+   "explication": "Node-RED permet des tableaux de bord simples mais très limités, InfluxDB aussi. Grafana est l'outil avancé de visualisation et d'analyse : il interroge des bases en ligne (InfluxDB) et produit des tableaux de bord web en direct (port 3000). Il ne stocke pas les mesures.",
+   "cours": "Cours IV p. 70-74"
+  },
+  {
+   "id": "IV-43",
+   "chapitre": "IV",
+   "type": "raisonnement",
+   "question": "Une position est codée en geohash de niveau 9 (9 caractères). Quelle précision et quelle taille cela représente-t-il ?",
+   "choix": [
+    "Une case d'environ 4,8 m × 4,8 m, pour 9 octets",
+    "Une case d'environ 5000 km × 5000 km, pour 1 octet",
+    "Une case d'environ 1 mm × 1 mm, pour 36 octets",
+    "Une case d'environ 153 m × 153 m, pour 4 octets"
+   ],
+   "bonne": 0,
+   "explication": "Chaque caractère affine la position : niveau 1 ≤ 5000 × 5000 km, niveau 7 ≤ 153 × 153 m, niveau 9 ≤ 4,77 × 4,77 m. Le niveau 9 tient en 9 octets, contre 8 octets pour latitude et longitude en float et 36 octets en texte à 15 décimales.",
+   "cours": "Cours IV p. 76-81"
   },
   {
    "id": "V-01",
@@ -1666,7 +2621,11 @@
    ],
    "bonne": 3,
    "explication": "(4 + 2) × 8 = 48 bits ; × 5/4 = 60 bits ; 60 / 7 ≈ 8,6 → on arrondit au symbole supérieur : 9. Répondre 8 revient à arrondir vers le bas.",
-   "cours": "Cours V p. 21-22"
+   "cours": "Cours V p. 21-22",
+   "figure": {
+    "src": "figures/trame-lora.svg",
+    "alt": "Trame LoRa : préambule de N + 4,25 symboles, en-tête de 8 symboles, payload de P octets, CRC de 2 octets"
+   }
   },
   {
    "id": "V-20",
@@ -1682,6 +2641,348 @@
    "bonne": 0,
    "explication": "868 × 10^6 périodes par seconde × 0,032768 s ≈ 2,84 × 10^7. Un seul symbole LoRa contient donc des dizaines de millions d'oscillations de la porteuse.",
    "cours": "Cours V p. 23"
+  },
+  {
+   "id": "V-21",
+   "chapitre": "V",
+   "type": "connaissance",
+   "question": "Où se situent LoRa et LoRaWAN par rapport au modèle OSI ?",
+   "choix": [
+    "LoRa : couche application ; LoRaWAN : couche physique radio",
+    "LoRa : couche physique ; LoRaWAN : liaison et réseau (MAC)",
+    "Les deux sont des protocoles de la couche transport, comme TCP",
+    "LoRa : couche réseau (IP) ; LoRaWAN : couche session (5)"
+   ],
+   "bonne": 1,
+   "explication": "LoRa est la couche physique (la modulation). LoRaWAN couvre les couches liaison et réseau : MAC et adressage logique. L'application se place au-dessus.",
+   "cours": "Cours V p. 5-6"
+  },
+  {
+   "id": "V-22",
+   "chapitre": "V",
+   "type": "connaissance",
+   "question": "Qu'est-ce qu'un chirp, à la base de la modulation LoRa ?",
+   "choix": [
+    "Une impulsion très brève qui transporte un seul bit",
+    "Une porteuse de fréquence fixe dont seule l'amplitude varie",
+    "Un signal dont la fréquence balaie la bande, de fmin à fmax",
+    "Une suite de bits pseudo-aléatoires, comme les codes CDMA"
+   ],
+   "bonne": 2,
+   "explication": "LoRa utilise l'étalement de spectre par chirps (Compressed High-Intensity Radar Pulse) : la fréquence instantanée du signal balaie la bande passante de fmin à fmax pendant la durée du chirp.",
+   "cours": "Cours V p. 7"
+  },
+  {
+   "id": "V-23",
+   "chapitre": "V",
+   "type": "compréhension",
+   "question": "Comment LoRa distingue-t-il ses différents symboles ?",
+   "choix": [
+    "Par l'amplitude du chirp, sur 2^SF niveaux différents",
+    "Par la fréquence de la porteuse, différente pour chaque symbole",
+    "Par la durée du chirp, qui change avec la valeur du symbole",
+    "Par la position de départ du chirp : 2^SF décalages possibles"
+   ],
+   "bonne": 3,
+   "explication": "Un symbole est un chirp décalé dans le temps (« warped delayed chirp »). Exemple SF2 : décalages de 0, 25, 50 et 75 % → 4 symboles → 2 bits par symbole. En SF7, il y a 2^7 = 128 décalages possibles, donc 7 bits par symbole.",
+   "cours": "Cours V p. 9-10"
+  },
+  {
+   "id": "V-24",
+   "chapitre": "V",
+   "type": "raisonnement",
+   "question": "Combien de symboles différents un chirp peut-il représenter en SF10, et combien de bits porte chaque symbole ?",
+   "choix": [
+    "1024 symboles, 10 bits",
+    "10 symboles, 1024 bits",
+    "100 symboles, 10 bits",
+    "512 symboles, 9 bits"
+   ],
+   "bonne": 0,
+   "explication": "2^SF symboles possibles, soit 2^10 = 1024 en SF10, et SF = 10 bits par symbole. En pratique, LoRa utilise SF6 (64 symboles) à SF12 (4096 symboles). 512 symboles correspondent à SF9.",
+   "cours": "Cours V p. 9-10"
+  },
+  {
+   "id": "V-25",
+   "chapitre": "V",
+   "type": "raisonnement",
+   "question": "Un chirp LoRa occupe le canal 868,1 MHz avec une bande passante de 125 kHz. Entre quelles fréquences balaie-t-il ?",
+   "choix": [
+    "867,975 et 868,225 MHz",
+    "868,0375 et 868,1625 MHz",
+    "868,100 et 868,225 MHz",
+    "867,900 et 868,300 MHz"
+   ],
+   "bonne": 1,
+   "explication": "fmin = fch − BW/2 et fmax = fch + BW/2 : 868,1 ± 0,0625 MHz, soit 868,0375 à 868,1625 MHz (exemple du cours à 868 MHz : 867,9375 à 868,0625 MHz). 867,975 et 868,225 MHz oublient de diviser BW par 2.",
+   "cours": "Cours V p. 12"
+  },
+  {
+   "id": "V-26",
+   "chapitre": "V",
+   "type": "raisonnement",
+   "question": "En SF7 et 125 kHz, le débit brut vaut environ 6836 bit/s. Quel débit utile reste-t-il avec un coding rate de 4/5 ?",
+   "choix": [
+    "Environ 8545 bit/s",
+    "Environ 3418 bit/s",
+    "Environ 5469 bit/s",
+    "Environ 6836 bit/s"
+   ],
+   "bonne": 2,
+   "explication": "Le coding rate ajoute des bits de correction : avec 4/5, 4 bits sur 5 sont utiles. 6836 × 4/5 ≈ 5469 bit/s, c'est le débit du DR5 européen. 3418 bit/s correspond à CR 4/8 ; 8545 bit/s multiplie au lieu de diviser.",
+   "cours": "Cours V p. 14-16"
+  },
+  {
+   "id": "V-27",
+   "chapitre": "V",
+   "type": "connaissance",
+   "question": "Quel écart sépare les canaux LoRa européens 868,1, 868,3 et 868,5 MHz ?",
+   "choix": [
+    "125 kHz",
+    "100 kHz",
+    "1 MHz",
+    "200 kHz"
+   ],
+   "bonne": 3,
+   "explication": "Les canaux sont espacés de 200 kHz et font chacun 125 kHz de large. Des canaux supplémentaires optionnels existent en dessous : 867,9, 867,7, 867,5 MHz…",
+   "cours": "Cours V p. 16"
+  },
+  {
+   "id": "V-28",
+   "chapitre": "V",
+   "type": "compréhension",
+   "question": "Deux modules LoRa communiquent en point à point, sans passerelle. Qu'est-ce qui est vrai ?",
+   "choix": [
+    "Mêmes canal, BW, SF et CR des deux côtés ; liaison half-duplex",
+    "La liaison est full-duplex, grâce aux deux antennes séparées",
+    "Chaque module choisit librement son SF, la réception s'adapte",
+    "Il faut un abonnement chez un opérateur LoRaWAN pour émettre"
+   ],
+   "bonne": 0,
+   "explication": "Avec 2 modules, on réalise une liaison bidirectionnelle simple en half-duplex, à condition que les deux côtés aient les mêmes paramètres radio : canal, bande passante, SF et coding rate. Avantages : très simple, peu coûteux, sans infrastructure opérée.",
+   "cours": "Cours V p. 20"
+  },
+  {
+   "id": "V-29",
+   "chapitre": "V",
+   "type": "connaissance",
+   "question": "Quel coding rate protège l'en-tête d'une trame LoRa en mode explicite ?",
+   "choix": [
+    "4/5",
+    "4/8",
+    "Celui choisi par l'utilisateur",
+    "Pas de codage pour l'en-tête"
+   ],
+   "bonne": 1,
+   "explication": "L'en-tête (8 symboles, en mode explicite seulement) est codé en CR 4/8 ; le coding rate choisi par l'utilisateur s'applique au payload et au CRC.",
+   "cours": "Cours V p. 21"
+  },
+  {
+   "id": "V-30",
+   "chapitre": "V",
+   "type": "raisonnement",
+   "question": "En SF7, une trame qui transporte 1 octet utile dure 25,85 ms. Quel est le débit effectif ?",
+   "choix": [
+    "Environ 5469 bit/s",
+    "Environ 39 bit/s",
+    "Environ 309 bit/s",
+    "Environ 2327 bit/s"
+   ],
+   "bonne": 2,
+   "explication": "Débit effectif = bits utiles / durée de la trame = 8 bits / 25,85 ms ≈ 309 bit/s, très loin des 5469 bit/s du débit brut : préambule (12,25 symboles), en-tête (8 symboles) et CRC pèsent lourd. Avec « Hello World! » (12 octets en 41,21 ms), on monte à 2327 bit/s. 39 confond octets et bits.",
+   "cours": "Cours V p. 21-22",
+   "figure": {
+    "src": "figures/trame-lora.svg",
+    "alt": "Trame LoRa : préambule de N + 4,25 symboles, en-tête de 8 symboles, payload de P octets, CRC de 2 octets"
+   }
+  },
+  {
+   "id": "V-31",
+   "chapitre": "V",
+   "type": "compréhension",
+   "question": "Quel est l'avantage d'une passerelle LoRaWAN par rapport à une liaison LoRa point à point ?",
+   "choix": [
+    "Elle permet aux nœuds d'émettre en consommant bien moins d'énergie",
+    "Elle évite d'avoir un serveur réseau et un serveur d'application",
+    "Elle double la portée en amplifiant le signal reçu des nœuds",
+    "Elle écoute tous les paquets, quels que soient canal, SF, BW et CR"
+   ],
+   "bonne": 3,
+   "explication": "La passerelle LoRaWAN écoute et répond à tous les paquets entrants, quel que soit le canal, le SF, la BW ou le CR. LoRaWAN peut s'appuyer sur une infrastructure opérée ou privée, et apporte les mécanismes de réseau et de routage.",
+   "cours": "Cours V p. 24"
+  },
+  {
+   "id": "V-32",
+   "chapitre": "V",
+   "type": "connaissance",
+   "question": "Qu'a apporté la version 1.1 de LoRaWAN (2017) ?",
+   "choix": [
+    "Une sécurité améliorée et l'itinérance (roaming)",
+    "La toute première spécification de la classe B",
+    "Le passage des compteurs de trames sur 32 bits",
+    "La première version stable, avec de nombreuses régions"
+   ],
+   "bonne": 0,
+   "explication": "Historique du cours : 1.0.2 (2016) première version stable avec de nombreuses régions ; 1.1 (2017) sécurité et itinérance ; 1.0.3 (2018) spécification de la classe B ; 1.0.4 (2020) l'AppEUI devient JoinEUI et les compteurs de trames passent sur 32 bits.",
+   "cours": "Cours V p. 25"
+  },
+  {
+   "id": "V-33",
+   "chapitre": "V",
+   "type": "raisonnement",
+   "question": "D'après la structure de trame LoRaWAN du schéma, combien d'octets au minimum LoRaWAN ajoute-t-il autour des données utiles (Frame Payload), sans compter le CRC radio ?",
+   "choix": [
+    "9 octets",
+    "13 octets",
+    "28 octets",
+    "15 octets"
+   ],
+   "bonne": 1,
+   "explication": "MAC Header (1) + Frame Header (7 au minimum : Device Address 4, Frame Control 1, Frame Counter 2, Frame Options 0) + Frame Port (1) + MIC (4) = 13 octets. Avec 15 octets d'options, on monterait à 28 ; le CRC de 2 octets s'y ajoute au niveau physique (15).",
+   "cours": "Cours V p. 26-27",
+   "figure": {
+    "src": "figures/trame-lorawan.svg",
+    "alt": "Trame LoRaWAN en couches : MAC Header 1 octet, MAC Payload, MIC 4 octets ; Frame Header 7 à 22 octets, Frame Port 1 octet, Frame Payload ; Device Address 4 octets, Frame Control 1 octet, Frame Counter 2 octets, Frame Options 0 à 15 octets"
+   }
+  },
+  {
+   "id": "V-34",
+   "chapitre": "V",
+   "type": "connaissance",
+   "question": "À quelle couche travaille une passerelle LoRaWAN ?",
+   "choix": [
+    "À la couche application : elle déchiffre les données des nœuds",
+    "À la couche MAC : elle vérifie le MIC et retire les doublons",
+    "À la couche physique : elle relaie les paquets LoRa vers IP",
+    "À la couche transport : elle découpe les paquets en segments TCP"
+   ],
+   "bonne": 2,
+   "explication": "La passerelle n'est qu'un équipement de couche physique (packet forwarder LoRa vers IP) : elle vérifie seulement le CRC et transmet au serveur réseau auquel elle est rattachée. Le MIC et les doublons sont l'affaire du serveur réseau, le déchiffrement celle du serveur d'application.",
+   "cours": "Cours V p. 31-33"
+  },
+  {
+   "id": "V-35",
+   "chapitre": "V",
+   "type": "connaissance",
+   "question": "Dans un réseau LoRaWAN, qui met en file d'attente les messages descendants (downlink) destinés aux nœuds ?",
+   "choix": [
+    "La passerelle la plus proche",
+    "Le serveur d'application seul",
+    "Le nœud lui-même",
+    "Le serveur réseau"
+   ],
+   "bonne": 3,
+   "explication": "Le serveur réseau élimine les doublons, vérifie l'adresse, l'authenticité et l'intégrité, gère les acquittements, transmet les uplinks au serveur d'application et met en file d'attente les downlinks venant de ce serveur. Le serveur d'application, lui, génère le contenu des downlinks.",
+   "cours": "Cours V p. 34, p. 36"
+  },
+  {
+   "id": "V-36",
+   "chapitre": "V",
+   "type": "connaissance",
+   "question": "En activation ABP, où sont rangées l'adresse et les clés de session du nœud ?",
+   "choix": [
+    "En dur, dans la mémoire du nœud et dans les bases des serveurs",
+    "Elles ne sont pas stockées : on les recalcule à chaque trame",
+    "Dans la passerelle qui reçoit le nœud le plus souvent",
+    "Dans un Join Accept que le nœud redemande à chaque réveil"
+   ],
+   "bonne": 0,
+   "explication": "En ABP, l'adresse (DevAddr) et les clés NwkSKey et AppSKey sont fixées à l'avance : stockées dans la mémoire non volatile du nœud et dans les bases de données des serveurs. Le Join Request / Join Accept, c'est l'OTAA.",
+   "cours": "Cours V p. 41"
+  },
+  {
+   "id": "V-37",
+   "chapitre": "V",
+   "type": "compréhension",
+   "question": "En OTAA, avec quelle clé sont protégés le DevAddr, la NwkSKey et l'AppSKey envoyés dans le Join Accept ?",
+   "choix": [
+    "L'AppSKey",
+    "L'AppKey",
+    "La NwkSKey",
+    "Le DevNonce"
+   ],
+   "bonne": 1,
+   "explication": "Le Join Accept transporte DevAddr, NwkSKey et AppSKey chiffrés avec l'AppKey, la clé que le nœud et le serveur connaissent déjà. Le MIC du Join Request est lui aussi calculé avec l'AppKey. Les clés de session n'existent pas encore à ce moment-là.",
+   "cours": "Cours V p. 42-43"
+  },
+  {
+   "id": "V-38",
+   "chapitre": "V",
+   "type": "connaissance",
+   "question": "En décodant le Join Accept, que récupère le nœud en plus de son adresse et de ses clés de session ?",
+   "choix": [
+    "La liste des autres nœuds présents sur le même réseau",
+    "Une copie de l'AppKey, renouvelée à chaque connexion",
+    "La liste des canaux disponibles, fournie par le réseau",
+    "La dernière version du firmware à installer sur le nœud"
+   ],
+   "bonne": 2,
+   "explication": "Dans l'exemple OTAA du cours, le nœud retrouve devAddr, nwkSKey, appSKey et la liste des canaux (CFList) : 5 fréquences de 867,1 à 867,9 MHz, soit 8 canaux disponibles avec les 3 canaux par défaut.",
+   "cours": "Cours V p. 50-51"
+  },
+  {
+   "id": "V-39",
+   "chapitre": "V",
+   "type": "compréhension",
+   "question": "Un équipement de classe A vient d'émettre. Dans quel cas ouvre-t-il la fenêtre de réception RX2 ?",
+   "choix": [
+    "Systématiquement, juste après avoir refermé RX1",
+    "Quand la passerelle lui envoie une balise (beacon)",
+    "Quand sa batterie est trop faible pour ouvrir RX1",
+    "Seulement si rien n'a été reçu pendant la fenêtre RX1"
+   ],
+   "bonne": 3,
+   "explication": "Après chaque envoi, la classe A ouvre RX1 (1 s après la fin de l'émission) puis RX2 (2 s après), mais RX2 n'est ouverte que si rien n'a été reçu en RX1. Les balises (beacons) concernent la classe B.",
+   "cours": "Cours V p. 52",
+   "figure": {
+    "src": "figures/classe-a.svg",
+    "alt": "Classe A : émission, puis fenêtre RX1 1 s après la fin de l'émission et fenêtre RX2 2 s après"
+   }
+  },
+  {
+   "id": "V-40",
+   "chapitre": "V",
+   "type": "raisonnement",
+   "question": "Un détecteur de fuite d'eau sur pile envoie une alerte quand il détecte de l'eau, et sinon une mesure par heure. Quelle classe LoRaWAN choisir ?",
+   "choix": [
+    "La classe A",
+    "La classe B",
+    "La classe C",
+    "Les classes B et C ensemble"
+   ],
+   "bonne": 0,
+   "explication": "Capteur sur pile qui parle surtout en montée : la classe A, la plus économe, suffit. Le cours cite justement la détection de fuites d'eau, la surveillance de l'environnement, le suivi d'animaux ou le stationnement intelligent. B et C consomment plus pour mieux recevoir.",
+   "cours": "Cours V p. 53"
+  },
+  {
+   "id": "V-41",
+   "chapitre": "V",
+   "type": "compréhension",
+   "question": "Par rapport à la classe A, qu'apporte la classe B, et à quel prix ?",
+   "choix": [
+    "Plus économe, mais elle ne peut plus recevoir de messages descendants",
+    "Plus réactive aux messages descendants, mais elle consomme plus",
+    "Plus de portée grâce aux balises, mais un débit divisé par deux",
+    "Une écoute continue, mais elle doit être alimentée sur secteur"
+   ],
+   "bonne": 1,
+   "explication": "La classe B ajoute à la classe A des fenêtres de réception programmées (ping slots), synchronisées par des balises : plus réactive aux downlinks, mais moins économe que A. Exemples : compteurs d'eau ou d'électricité, éclairage public. L'écoute continue sur secteur, c'est la classe C.",
+   "cours": "Cours V p. 54"
+  },
+  {
+   "id": "V-42",
+   "chapitre": "V",
+   "type": "raisonnement",
+   "question": "Une sirène d'alarme alimentée sur secteur doit réagir tout de suite à un ordre envoyé par le réseau. Quelle classe LoRaWAN convient ?",
+   "choix": [
+    "La classe A",
+    "La classe B",
+    "La classe C",
+    "Pas LoRaWAN, faute de downlink"
+   ],
+   "bonne": 2,
+   "explication": "La classe C écoute en permanence (sauf pendant ses émissions) : réponse immédiate aux ordres, mais forte consommation, d'où l'alimentation secteur. Le cours cite les alarmes, l'éclairage public et les compteurs. La classe A n'écoute qu'après ses propres envois.",
+   "cours": "Cours V p. 55"
   }
  ]
 }

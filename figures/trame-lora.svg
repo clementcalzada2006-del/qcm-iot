@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 118" width="360" height="118" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12">
+  <rect width="360" height="118" fill="#ffffff"/>
+  <g stroke="#1f2937" stroke-width="1.6">
+    <rect x="8" y="34" width="96" height="50" fill="#e3e8ea"/>
+    <rect x="104" y="34" width="78" height="50" fill="#eef1f2"/>
+    <rect x="182" y="34" width="96" height="50" fill="#ffffff"/>
+    <rect x="278" y="34" width="74" height="50" fill="#eef1f2"/>
+    <path d="M8 102 H342" fill="none"/>
+  </g>
+  <g fill="#1f2937" text-anchor="middle">
+    <polygon points="342,97 352,102 342,107"/>
+    <text x="180" y="20" font-size="13" font-weight="700" fill="#37474F">Trame LoRa (couche physique)</text>
+    <text x="56" y="55" font-weight="700">Préambule</text>
+    <text x="56" y="72">N + 4,25 symb.</text>
+    <text x="143" y="55" font-weight="700">En-tête</text>
+    <text x="143" y="72">8 symboles</text>
+    <text x="230" y="55" font-weight="700">Payload</text>
+    <text x="230" y="72">P octets</text>
+    <text x="315" y="55" font-weight="700">CRC</text>
+    <text x="315" y="72">2 octets</text>
+    <text x="300" y="96" font-size="11">temps</text>
+  </g>
+</svg>

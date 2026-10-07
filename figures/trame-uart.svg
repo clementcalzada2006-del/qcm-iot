@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 195" width="360" height="195" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13">
+  <rect width="360" height="195" fill="#ffffff"/>
+  <g stroke="#1f2937" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- repos à 1, start à 0 -->
+    <path d="M24 50 H50 V90 H78" stroke="#00695C" stroke-width="2.5"/>
+    <!-- 8 bits de données -->
+    <path d="M78 50 H302 M78 90 H302 M78 50 V90 M106 50 V90 M134 50 V90 M162 50 V90 M190 50 V90 M218 50 V90 M246 50 V90 M274 50 V90 M302 50 V90"/>
+    <!-- stop à 1 puis repos -->
+    <path d="M302 50 H352" stroke="#00695C" stroke-width="2.5"/>
+    <path d="M302 50 V90" stroke-dasharray="3 3" stroke-width="1"/>
+    <!-- durée d'un bit -->
+    <path d="M78 128 H106 M78 123 V133 M106 123 V133" stroke-width="1.5"/>
+    <!-- un caractère -->
+    <path d="M50 160 H330 M50 155 V165 M330 155 V165" stroke-width="1.5"/>
+  </g>
+  <g fill="#1f2937" text-anchor="middle">
+    <text x="12" y="55">1</text>
+    <text x="12" y="95">0</text>
+    <text x="92" y="75">d0</text><text x="120" y="75">d1</text><text x="148" y="75">d2</text><text x="176" y="75">d3</text>
+    <text x="204" y="75">d4</text><text x="232" y="75">d5</text><text x="260" y="75">d6</text><text x="288" y="75">d7</text>
+    <text x="37" y="112" font-size="11">repos</text>
+    <text x="64" y="112" font-size="11">start</text>
+    <text x="316" y="112" font-size="11">stop</text>
+    <text x="92" y="148" font-size="12">1 bit = 1 / débit</text>
+    <text x="190" y="184" font-size="12">1 caractère en 8N1 = 10 bits</text>
+  </g>
+</svg>

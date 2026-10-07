@@ -1,6 +1,6 @@
 // Service worker : met tous les fichiers en cache pour un fonctionnement hors ligne.
 // Changer VERSION à chaque mise en ligne pour que les téléphones récupèrent la nouvelle version.
-const VERSION = "qcm-iot-2026-10-07-1";
+const VERSION = "qcm-iot-2026-10-07-2";
 const FICHIERS = [
   "./",
   "./index.html",
@@ -14,6 +14,18 @@ const FICHIERS = [
   "./icons/icon-512.png",
   "./icons/icon-maskable-512.png",
   "./icons/apple-touch-icon.png",
+  // schémas des questions (npm test vérifie que chaque figure utilisée est listée ici)
+  "./figures/cna-r2r.svg",
+  "./figures/cna-capacitif.svg",
+  "./figures/diviseur-capacitif.svg",
+  "./figures/pwm.svg",
+  "./figures/trame-uart.svg",
+  "./figures/profil-mission.svg",
+  "./figures/lien-radio.svg",
+  "./figures/mqtt-topics.svg",
+  "./figures/trame-lora.svg",
+  "./figures/trame-lorawan.svg",
+  "./figures/classe-a.svg",
 ];
 
 self.addEventListener("install", (e) => {

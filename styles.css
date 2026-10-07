@@ -282,6 +282,10 @@ sub, sup { font-size: 0.75em; line-height: 0; }
 }
 .enonce { font-size: 1.2rem; line-height: 1.45; font-weight: 650; margin: 18px 0 14px; outline: none; }
 .liste-choix { display: grid; gap: 10px; }
+/* Schéma de la question : toujours sur fond blanc, lisible en thème sombre */
+.figure { margin: 0 0 14px; padding: 8px; background: #ffffff; border: 1px solid var(--bord); border-radius: 12px; }
+.figure img { display: block; width: 100%; max-width: 460px; height: auto; margin: 0 auto; }
+details.corr .figure { margin: 0; }
 .choix-btn {
   display: flex;
   align-items: flex-start;

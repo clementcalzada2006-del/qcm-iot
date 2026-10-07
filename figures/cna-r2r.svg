@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 225" width="360" height="225" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14">
+  <rect width="360" height="225" fill="#ffffff"/>
+  <g stroke="#1f2937" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- rail -->
+    <path d="M40 50 H135 M175 50 H225 M265 50 H330"/>
+    <!-- résistances R horizontales -->
+    <rect x="135" y="43" width="40" height="14" fill="#ffffff"/>
+    <rect x="225" y="43" width="40" height="14" fill="#ffffff"/>
+    <!-- 2R de terminaison vers la masse -->
+    <path d="M40 50 V75 M40 115 V140 M28 140 H52 M32 146 H48 M36 152 H44"/>
+    <rect x="33" y="75" width="14" height="40" fill="#ffffff"/>
+    <!-- 2R vers les bits -->
+    <path d="M110 50 V75 M110 115 V142 M200 50 V75 M200 115 V142 M290 50 V75 M290 115 V142"/>
+    <rect x="103" y="75" width="14" height="40" fill="#ffffff"/>
+    <rect x="193" y="75" width="14" height="40" fill="#ffffff"/>
+    <rect x="283" y="75" width="14" height="40" fill="#ffffff"/>
+    <circle cx="110" cy="146" r="4"/>
+    <circle cx="200" cy="146" r="4"/>
+    <circle cx="290" cy="146" r="4"/>
+  </g>
+  <g fill="#1f2937">
+    <circle cx="110" cy="50" r="3.5"/>
+    <circle cx="200" cy="50" r="3.5"/>
+    <circle cx="290" cy="50" r="3.5"/>
+    <polygon points="330,44 342,50 330,56"/>
+    <text x="155" y="35" text-anchor="middle">R</text>
+    <text x="245" y="35" text-anchor="middle">R</text>
+    <text x="52" y="100">2R</text>
+    <text x="122" y="100">2R</text>
+    <text x="212" y="100">2R</text>
+    <text x="302" y="100">2R</text>
+    <text x="350" y="36" text-anchor="end" font-weight="700" fill="#00695C">Vout</text>
+    <text x="110" y="172" text-anchor="middle" font-weight="700" fill="#00695C">d0</text>
+    <text x="200" y="172" text-anchor="middle" font-weight="700" fill="#00695C">d1</text>
+    <text x="290" y="172" text-anchor="middle" font-weight="700" fill="#00695C">d2</text>
+    <text x="40" y="172" text-anchor="middle" font-size="12">masse</text>
+    <text x="180" y="208" text-anchor="middle" font-size="12">chaque bit relie sa 2R à Vref (bit 1) ou à 0 V (bit 0)</text>
+  </g>
+</svg>

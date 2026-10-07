@@ -12,6 +12,7 @@ const captures = join(racine, "outils", "captures");
 mkdirSync(captures, { recursive: true });
 const DATA = JSON.parse(readFileSync(join(racine, "data.json"), "utf8"));
 const BONNE = Object.fromEntries(DATA.questions.map((q) => [q.id, q.bonne]));
+const N1 = DATA.questions.filter((q) => q.chapitre === "I").length;
 
 let echecs = 0;
 let total = 0;
@@ -125,7 +126,7 @@ console.log("\n1. Rattrapage persistant");
   await page.locator('[data-act="lancer"][data-chap="I"]').click();
   await page.locator("section[data-qid]").waitFor();
   verif((await page.locator(".bandeau .titre-chap").textContent()).includes("Chapitre I · Introduction à l'IoT"), "bandeau du chapitre");
-  verif((await page.locator(".bandeau .compteur").textContent()).trim() === "1 / 20", "progression « 1 / 20 »");
+  verif((await page.locator(".bandeau .compteur").textContent()).trim() === `1 / ${N1}`, `progression « 1 / ${N1} »`);
   await controleAffichage(page, "question");
 
   const ordres = [];
@@ -134,7 +135,7 @@ console.log("\n1. Rattrapage persistant");
   verif((await etatQuestion(page, ratee)) === "revoir", `question ratée (${ratee}) → « à revoir »`);
   verif((await page.locator(".choix-btn.juste").count()) === 1 && (await page.locator(".choix-btn.faux").count()) === 1, "correction : bonne réponse en vert, mon choix en rouge");
   verif((await page.locator(".ref-cours").textContent()).startsWith("À revoir : Cours I"), "référence « À revoir : Cours I … »");
-  verif((await page.locator(".encore").textContent()).includes("Encore 20 questions à réussir"), "« Encore 20 questions à réussir »");
+  verif((await page.locator(".encore").textContent()).includes(`Encore ${N1} questions à réussir`), `« Encore ${N1} questions à réussir »`);
   await controleAffichage(page, "correction");
   await page.locator('[data-act="essentiel-feuille"]').click();
   verif((await page.locator(".feuille .points li").count()) === 8, "« Voir l'essentiel du chapitre » : 8 points");
@@ -143,22 +144,22 @@ console.log("\n1. Rattrapage persistant");
   await suivante(page);
 
   let vus = [ratee];
-  for (let i = 0; i < 40; i++) {
+  for (let i = 0; i < N1 + 5; i++) {
     if (await page.locator(".bilan-tete").count()) break;
     ordres.push(await page.locator(".choix-btn").evaluateAll((bs) => bs.map((b) => b.dataset.orig).join("")));
     vus.push(await repondre(page, true, true));
     await suivante(page);
   }
-  verif(vus.length === 21 && vus[20] === ratee, "la question ratée revient à la fin de la série", vus.join(","));
+  verif(vus.length === N1 + 1 && vus[N1] === ratee, "la question ratée revient à la fin de la série", vus.join(","));
   verif(new Set(ordres).size > 1, "ordre des choix mélangé à chaque affichage");
-  verif((await page.locator(".gros-score").textContent()).trim() === "19 / 20", "bilan : 19 / 20 du premier coup");
+  verif((await page.locator(".gros-score").textContent()).trim() === `${N1 - 1} / ${N1}`, `bilan : ${N1 - 1} / ${N1} du premier coup`);
   verif((await etatQuestion(page, ratee)) === "revoir", "réussie dans la boucle : reste « à revoir »");
   await controleAffichage(page, "bilan");
 
   await page.reload();
   await page.locator(".chapitre").first().waitFor();
   const compteur = (await page.locator('.chapitre[data-chap="I"] .compteurs').textContent()).trim();
-  verif(compteur === "19 maîtrisées · 1 à revoir · 0 nouvelle", "après rechargement : compteur du chapitre", compteur);
+  verif(compteur === `${N1 - 1} maîtrisées · 1 à revoir · 0 nouvelle`, "après rechargement : compteur du chapitre", compteur);
   verif((await page.locator('[data-act="erreurs"] .nombre').textContent()).trim() === "1", "accueil : 1 question à revoir");
 
   await page.locator('[data-act="lancer"][data-chap="I"]').click();
@@ -173,11 +174,11 @@ console.log("\n1. Rattrapage persistant");
   await page.locator(".bilan-tete").waitFor();
   await page.goto(BASE + "#/");
   await page.locator(".chapitre").first().waitFor();
-  verif((await page.locator('.chapitre[data-chap="I"] .compteurs').textContent()).trim() === "20 maîtrisées · 0 à revoir · 0 nouvelle", "chapitre I : 20 maîtrisées");
+  verif((await page.locator('.chapitre[data-chap="I"] .compteurs').textContent()).trim() === `${N1} maîtrisées · 0 à revoir · 0 nouvelle`, `chapitre I : ${N1} maîtrisées`);
   await page.locator('[data-act="lancer"][data-chap="I"]').click();
   await page.locator(".bilan-tete h1").waitFor();
-  verif((await page.locator(".bilan-tete h1").textContent()) === "Chapitre maîtrisé", "« Chapitre maîtrisé » quand les 20 sont maîtrisées");
-  verif((await page.locator('[data-act="refaire"]').count()) === 1, "bouton « Refaire les 20 questions »");
+  verif((await page.locator(".bilan-tete h1").textContent()) === "Chapitre maîtrisé", "« Chapitre maîtrisé » quand toutes sont maîtrisées");
+  verif((await page.locator('[data-act="refaire"]').textContent()).trim() === `Refaire les ${N1} questions`, `bouton « Refaire les ${N1} questions »`);
   await controleAffichage(page, "chapitre-maitrise");
 
   // « Pas sûr » et « Je ne sais pas » sur le chapitre II
@@ -292,6 +293,33 @@ console.log("\n2. Affichage des autres écrans à 375 px");
   const fid = await qid(page);
   await page.locator('[data-act="flash-eval"][data-v="0"]').click();
   verif((await etatQuestion(page, fid)) === "revoir", "flashcard « Je ne savais pas » → « à revoir »");
+
+  // schémas : entraînement ciblé « raisonnement du chapitre II », jusqu'à tomber sur une question illustrée
+  await page.goto(BASE + "#/cible");
+  for (const c of ["I", "III", "IV", "V"]) await page.locator(`[data-act="cible-chap"][data-v="${c}"]`).click();
+  for (const t of ["connaissance", "compréhension"]) await page.locator(`[data-act="cible-type"][data-v="${t}"]`).click();
+  await page.locator('[data-act="cible-lancer"]').click();
+  await page.locator("section[data-qid]").waitFor();
+  let figureVue = null;
+  for (let i = 0; i < 30 && !figureVue; i++) {
+    if (await page.locator(".figure img").count()) {
+      figureVue = await qid(page);
+      break;
+    }
+    await repondre(page, true, true);
+    await suivante(page);
+    if (await page.locator(".bilan-tete").count()) break;
+  }
+  verif(!!figureVue, "une question de raisonnement du chapitre II affiche son schéma", "aucun schéma rencontré");
+  if (figureVue) {
+    const img = await page.locator(".figure img").evaluate((i) => new Promise((ok) => (i.complete ? ok(i) : i.addEventListener("load", () => ok(i)))).then((i) => ({ w: i.naturalWidth, l: i.getBoundingClientRect().width, alt: i.alt })));
+    verif(img.w > 0 && img.alt.length > 10, `schéma de ${figureVue} chargé, avec un texte alternatif`, JSON.stringify(img));
+    verif(img.l <= 375 - 32 && img.l > 250, `schéma de ${figureVue} à la largeur de l'écran (${Math.round(img.l)} px)`);
+    await controleAffichage(page, "question-avec-schema");
+  }
+  const toutesFigures = [...new Set(DATA.questions.filter((q) => q.figure).map((q) => q.figure.src))];
+  const chargees = await page.evaluate(async (srcs) => (await Promise.all(srcs.map((s) => fetch(s).then((r) => r.ok && r.headers.get("content-type")?.includes("svg"))))).filter(Boolean).length, toutesFigures);
+  verif(chargees === toutesFigures.length, `les ${toutesFigures.length} schémas sont servis en SVG`);
 
   // grand texte et thème sombre
   await page.goto(BASE + "#/reglages");

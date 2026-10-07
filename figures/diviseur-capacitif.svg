@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 215" width="300" height="215" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14">
+  <rect width="300" height="215" fill="#ffffff"/>
+  <g stroke="#1f2937" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="90" cy="28" r="4"/>
+    <path d="M90 32 V70 M74 70 H106 M74 80 H106 M90 80 V150 M74 150 H106 M74 160 H106 M90 160 V190 M78 190 H102 M82 196 H98 M86 202 H94"/>
+    <path d="M90 115 H200"/>
+  </g>
+  <g fill="#1f2937">
+    <circle cx="90" cy="115" r="3.5"/>
+    <polygon points="200,109 212,115 200,121"/>
+    <text x="78" y="33" text-anchor="end" font-weight="700" fill="#00695C">Vin</text>
+    <text x="114" y="80">C1</text>
+    <text x="114" y="160">C2</text>
+    <text x="218" y="120" font-weight="700" fill="#00695C">Vout</text>
+    <text x="146" y="140" font-size="12">nœud de sortie isolé,</text>
+    <text x="146" y="156" font-size="12">déchargé au départ</text>
+  </g>
+</svg>

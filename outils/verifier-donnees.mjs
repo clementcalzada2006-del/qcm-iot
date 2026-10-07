@@ -1,7 +1,7 @@
 // Contrôle des données du QCM : node outils/verifier-donnees.mjs
 // Vérifie la structure de data.json et que la longueur des choix ne trahit pas la bonne réponse.
 // (Les choix ont été reformulés le 07/10/2026 : data.json n'est plus une copie du prompt d'origine.)
-import { readFileSync } from "node:fs";
+import { readFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
@@ -23,7 +23,8 @@ for (const c of data.chapitres) {
 for (const id of Object.keys(data.essentiel)) ok(idsChap.includes(id), `"essentiel" cite un chapitre inconnu : ${id}`);
 
 const q = data.questions;
-ok(q.length === 100, `100 questions attendues, ${q.length} trouvées`);
+ok(q.length >= 100, `au moins 100 questions attendues, ${q.length} trouvées`);
+const sw = readFileSync(join(racine, "sw.js"), "utf8");
 const vus = new Set();
 const parChap = {};
 const types = new Set(["connaissance", "compréhension", "raisonnement"]);
@@ -42,25 +43,34 @@ for (const x of q) {
   ok(Number.isInteger(x.bonne) && x.bonne >= 0 && x.bonne <= 3, `${x.id} : "bonne" hors de 0..3`);
   ok(typeof x.explication === "string" && x.explication.length > 0, `${x.id} : explication vide`);
   ok(typeof x.cours === "string" && x.cours.startsWith("Cours "), `${x.id} : référence de cours absente`);
+  ok(/^(I|II|III|IV|V)-\d{2}$/.test(x.id), `${x.id} : id mal formé`);
+  if (x.figure) {
+    ok(typeof x.figure.src === "string" && existsSync(join(racine, x.figure.src)), `${x.id} : figure introuvable ${x.figure?.src}`);
+    ok(typeof x.figure.alt === "string" && x.figure.alt.length > 10, `${x.id} : texte alternatif de la figure manquant`);
+    ok(sw.includes(`"./${x.figure.src}"`), `${x.id} : ${x.figure.src} absente du cache hors ligne (sw.js)`);
+  }
 }
-for (const id of idsChap) ok(parChap[id] === 20, `chapitre ${id} : 20 questions attendues, ${parChap[id] || 0} trouvées`);
+for (const id of idsChap) ok(parChap[id] >= 20, `chapitre ${id} : au moins 20 questions attendues, ${parChap[id] || 0} trouvées`);
+const figures = q.filter((x) => x.figure).length;
 ok(Array.isArray(data.formulaire) && data.formulaire.length > 0, "formulaire vide");
 for (const f of data.formulaire) ok(f.theme && f.formule && typeof f.remarque === "string", `formule incomplète : ${f.theme}`);
 
 // La bonne réponse ne doit pas se repérer à sa longueur (le hasard donne environ 25 % par rang).
 let plusLongue = 0;
-let rangUn = 0;
+let visible = 0;
 let rapport = 0;
 for (const x of q) {
   const lb = x.choix[x.bonne].length;
   const autres = x.choix.filter((_, i) => i !== x.bonne).map((c) => c.length);
   if (autres.every((l) => lb > l)) plusLongue++;
-  if (autres.every((l) => lb >= l)) rangUn++;
+  // « visiblement » plus longue : au moins 15 % et 5 caractères de plus que le plus long des leurres
+  const max = Math.max(...autres);
+  if (lb >= 1.15 * max && lb - max >= 5) visible++;
   rapport += lb / (autres.reduce((a, b) => a + b, 0) / 3);
 }
 rapport /= q.length;
 ok(plusLongue <= 0.3 * q.length, `bonne réponse strictement la plus longue dans ${plusLongue} questions (maximum ${0.3 * q.length})`);
-ok(rangUn <= 0.35 * q.length, `bonne réponse la plus longue (ex aequo compris) dans ${rangUn} questions (maximum ${0.35 * q.length})`);
+ok(visible <= 0.05 * q.length, `bonne réponse visiblement plus longue que les autres dans ${visible} questions (maximum ${0.05 * q.length})`);
 ok(rapport >= 0.9 && rapport <= 1.1, `longueur moyenne bonne réponse / leurres = ${rapport.toFixed(2)} (attendu entre 0,90 et 1,10)`);
 
 // Répartition des bonnes réponses (simple information)
@@ -77,4 +87,5 @@ if (erreurs.length) {
 console.log(`OK : ${q.length} questions, ${idsChap.length} chapitres (${idsChap.map((i) => `${i}=${parChap[i]}`).join(", ")})`);
 console.log(`ids uniques, 4 choix distincts partout, "bonne" dans 0..3, essentiel 8 x ${idsChap.length}, ${data.formulaire.length} formules`);
 console.log(`Bonnes réponses en A/B/C/D : ${repart.join(" / ")} ; types : ${JSON.stringify(typesCompte)}`);
-console.log(`Longueur des choix : bonne réponse la plus longue dans ${plusLongue} questions, rapport moyen ${rapport.toFixed(2)}`);
+console.log(`Longueur des choix : bonne réponse la plus longue dans ${plusLongue} questions (visiblement : ${visible}), rapport moyen ${rapport.toFixed(2)}`);
+console.log(`${figures} questions avec un schéma, toutes présentes dans le cache hors ligne`);

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" width="360" height="220" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14">
+  <rect width="360" height="220" fill="#ffffff"/>
+  <g stroke="#1f2937" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M60 50 H318"/>
+    <!-- condensateurs : fil, armatures, fil -->
+    <path d="M60 50 V85 M44 85 H76 M44 95 H76 M60 95 V128"/>
+    <path d="M130 50 V85 M114 85 H146 M114 95 H146 M130 95 V128"/>
+    <path d="M200 50 V85 M184 85 H216 M184 95 H216 M200 95 V128"/>
+    <path d="M270 50 V85 M254 85 H286 M254 95 H286 M270 95 V130 M258 130 H282 M262 136 H278 M266 142 H274"/>
+    <circle cx="60" cy="132" r="4"/>
+    <circle cx="130" cy="132" r="4"/>
+    <circle cx="200" cy="132" r="4"/>
+  </g>
+  <g fill="#1f2937">
+    <circle cx="130" cy="50" r="3.5"/>
+    <circle cx="200" cy="50" r="3.5"/>
+    <circle cx="270" cy="50" r="3.5"/>
+    <polygon points="318,44 330,50 318,56"/>
+    <text x="80" y="95">4C</text>
+    <text x="150" y="95">2C</text>
+    <text x="220" y="95">C</text>
+    <text x="290" y="95">C</text>
+    <text x="350" y="36" text-anchor="end" font-weight="700" fill="#00695C">Vout</text>
+    <text x="60" y="158" text-anchor="middle" font-weight="700" fill="#00695C">d2</text>
+    <text x="130" y="158" text-anchor="middle" font-weight="700" fill="#00695C">d1</text>
+    <text x="200" y="158" text-anchor="middle" font-weight="700" fill="#00695C">d0</text>
+    <text x="270" y="160" text-anchor="middle" font-size="12">0 V</text>
+    <text x="180" y="200" text-anchor="middle" font-size="12">bit à 1 : armature reliée à Vdd · bit à 0 : reliée à 0 V</text>
+  </g>
+</svg>
