@@ -1,6 +1,6 @@
 // Service worker : met tous les fichiers en cache pour un fonctionnement hors ligne.
 // Changer VERSION à chaque mise en ligne pour que les téléphones récupèrent la nouvelle version.
-const VERSION = "qcm-iot-2026-10-06-1";
+const VERSION = "qcm-iot-2026-10-07-1";
 const FICHIERS = [
   "./",
   "./index.html",

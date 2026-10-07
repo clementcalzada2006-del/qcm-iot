@@ -6,6 +6,7 @@
   "scripts": {
     "serve": "node outils/serveur.mjs",
     "verifier": "node outils/verifier-donnees.mjs",
+    "biais": "node outils/biais-longueur.mjs",
     "test:logique": "node outils/test-logique.mjs",
     "test:navigateur": "node outils/test-navigateur.mjs",
     "test": "node outils/verifier-donnees.mjs && node outils/test-logique.mjs && node outils/test-navigateur.mjs",

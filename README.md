@@ -7,7 +7,7 @@ Site statique (HTML, CSS, JavaScript sans framework), installable sur le télép
 
 - `index.html`, `styles.css`, `app.js` : l'interface.
 - `logique.js` : les règles (états, rattrapage, boîtes de Leitner), sans DOM.
-- `data.json` : les 100 questions, l'essentiel et le formulaire (ne pas modifier).
+- `data.json` : les 100 questions, l'essentiel et le formulaire. Les choix ont été reformulés pour que la bonne réponse ne soit plus repérable à sa longueur : `npm run biais` mesure ce biais, et `npm test` échoue s'il revient.
 - `manifest.webmanifest`, `sw.js`, `icons/` : installation et hors ligne.
 - `outils/` : contrôles et tests (non nécessaires au site).
 

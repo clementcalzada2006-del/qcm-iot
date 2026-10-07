@@ -1,7 +1,7 @@
-// Contrôle des données du QCM : node outils/verifier-donnees.mjs [chemin du prompt .md]
-// Vérifie la structure de data.json et, si le prompt d'origine est fourni,
-// que data.json est une copie à l'identique de son bloc JSON.
-import { readFileSync, existsSync } from "node:fs";
+// Contrôle des données du QCM : node outils/verifier-donnees.mjs
+// Vérifie la structure de data.json et que la longueur des choix ne trahit pas la bonne réponse.
+// (Les choix ont été reformulés le 07/10/2026 : data.json n'est plus une copie du prompt d'origine.)
+import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
@@ -47,15 +47,21 @@ for (const id of idsChap) ok(parChap[id] === 20, `chapitre ${id} : 20 questions 
 ok(Array.isArray(data.formulaire) && data.formulaire.length > 0, "formulaire vide");
 for (const f of data.formulaire) ok(f.theme && f.formule && typeof f.remarque === "string", `formule incomplète : ${f.theme}`);
 
-// Copie à l'identique du bloc JSON du prompt
-const prompt = process.argv[2];
-if (prompt && existsSync(prompt)) {
-  const md = readFileSync(prompt, "utf8");
-  const debut = md.indexOf("```json\n", md.indexOf("## Données")) + 8;
-  const fin = md.indexOf("\n```", debut);
-  ok(md.slice(debut, fin + 1) === brut, "data.json diffère du bloc JSON du prompt");
-  console.log("Comparaison avec le prompt : faite");
+// La bonne réponse ne doit pas se repérer à sa longueur (le hasard donne environ 25 % par rang).
+let plusLongue = 0;
+let rangUn = 0;
+let rapport = 0;
+for (const x of q) {
+  const lb = x.choix[x.bonne].length;
+  const autres = x.choix.filter((_, i) => i !== x.bonne).map((c) => c.length);
+  if (autres.every((l) => lb > l)) plusLongue++;
+  if (autres.every((l) => lb >= l)) rangUn++;
+  rapport += lb / (autres.reduce((a, b) => a + b, 0) / 3);
 }
+rapport /= q.length;
+ok(plusLongue <= 0.3 * q.length, `bonne réponse strictement la plus longue dans ${plusLongue} questions (maximum ${0.3 * q.length})`);
+ok(rangUn <= 0.35 * q.length, `bonne réponse la plus longue (ex aequo compris) dans ${rangUn} questions (maximum ${0.35 * q.length})`);
+ok(rapport >= 0.9 && rapport <= 1.1, `longueur moyenne bonne réponse / leurres = ${rapport.toFixed(2)} (attendu entre 0,90 et 1,10)`);
 
 // Répartition des bonnes réponses (simple information)
 const repart = [0, 0, 0, 0];
@@ -71,3 +77,4 @@ if (erreurs.length) {
 console.log(`OK : ${q.length} questions, ${idsChap.length} chapitres (${idsChap.map((i) => `${i}=${parChap[i]}`).join(", ")})`);
 console.log(`ids uniques, 4 choix distincts partout, "bonne" dans 0..3, essentiel 8 x ${idsChap.length}, ${data.formulaire.length} formules`);
 console.log(`Bonnes réponses en A/B/C/D : ${repart.join(" / ")} ; types : ${JSON.stringify(typesCompte)}`);
+console.log(`Longueur des choix : bonne réponse la plus longue dans ${plusLongue} questions, rapport moyen ${rapport.toFixed(2)}`);

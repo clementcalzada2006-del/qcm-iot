@@ -189,10 +189,10 @@
    "type": "connaissance",
    "question": "Par définition, qu'embarque un objet de l'Internet des objets ?",
    "choix": [
-    "Un serveur web, qui héberge en permanence toutes les données de l'objet",
-    "Des capteurs, de quoi traiter les données et un logiciel, pour échanger via un réseau",
-    "Un écran et un clavier, pour être piloté directement par un utilisateur",
-    "Uniquement une carte SIM, pour se connecter directement au réseau mobile"
+    "Un serveur web embarqué, qui héberge et publie en ligne les mesures de l'objet",
+    "Des capteurs, du traitement et un logiciel, pour échanger via un réseau",
+    "Un écran et un clavier, pour qu'un utilisateur le pilote sur place",
+    "Une carte SIM et un modem, pour se connecter au réseau mobile 4G"
    ],
    "bonne": 1,
    "explication": "Un objet IoT est un objet physique doté de capteurs, de capacités de traitement et de logiciel, qui échange des données via Internet ou un autre réseau. Ni carte SIM, ni écran, ni serveur embarqué ne sont nécessaires.",
@@ -204,10 +204,10 @@
    "type": "connaissance",
    "question": "Un réseau IoT est un « système de systèmes ». Quels sous-systèmes le composent ?",
    "choix": [
-    "Client web, serveur web, navigateur, page HTML, adresse URL",
+    "Client web, serveur web, navigateur, page HTML, adresse URL, cookies",
     "Émetteur, canal de transmission, récepteur, bruit, filtre de réception",
-    "Capteurs et systèmes embarqués, communications sans fil, réseau, base de données, supervision",
-    "Processeur, mémoire, alimentation électrique, boîtier étanche, antenne"
+    "Capteurs et embarqué, liaisons sans fil, réseau, base de données, supervision",
+    "Processeur, mémoire vive, alimentation sur pile, boîtier étanche, antenne"
    ],
    "bonne": 2,
    "explication": "Ce sont les 5 briques du cours : nœuds capteurs et embarqué (chapitre II), transmission sans fil (III et V), réseau, base de données et supervision (IV).",
@@ -250,9 +250,9 @@
    "question": "Quelles grandeurs un système IoT agricole surveille-t-il typiquement ?",
    "choix": [
     "Places de parking libres et qualité de l'air en ville",
-    "Température, pluie, humidité, vent, parasites, composition du sol",
-    "Rythme cardiaque, apnée du sommeil et chutes",
-    "Vitesse de rotation, vibrations et bruit des machines"
+    "Température, pluie, humidité, vent, parasites, contenu du sol",
+    "Rythme cardiaque, tension, apnée du sommeil et chutes",
+    "Vitesse de rotation, vibrations, usure et bruit des machines"
    ],
    "bonne": 1,
    "explication": "Agriculture : température, précipitations, humidité, vent, parasites, contenu du sol. Les autres listes correspondent à l'industrie 4.0, à la santé et à la ville connectée.",
@@ -264,10 +264,10 @@
    "type": "connaissance",
    "question": "Que désigne l'acronyme WSN ?",
    "choix": [
-    "Wireless Sensor Network : un réseau de capteurs sans fil",
-    "Wide Standard Network : le réseau Internet mondial",
-    "Web Server Node : un capteur qui héberge une page web",
-    "Wired Serial Node : un nœud relié par liaison série"
+    "Wireless Sensor Network : réseau de capteurs sans fil",
+    "Wide Standard Network : le réseau Internet à l'échelle mondiale",
+    "Web Server Node : un capteur qui héberge sa propre page web",
+    "Wired Serial Node : un nœud de mesure relié par liaison série"
    ],
    "bonne": 0,
    "explication": "WSN = Wireless Sensor Network. L'IoT généralise ces réseaux de capteurs distribués, ce qui en fait une nouvelle approche de l'instrumentation.",
@@ -279,7 +279,7 @@
    "type": "connaissance",
    "question": "Dans les dépenses des entreprises en IoT, quel poste est le plus important ?",
    "choix": [
-    "La sécurité, environ 45 % des dépenses",
+    "La sécurité (cybersécurité), environ 45 % des dépenses",
     "Les services, environ 10 % des dépenses",
     "Le logiciel (software), environ 70 % des dépenses",
     "Le matériel (hardware), environ 45 % des dépenses"
@@ -295,9 +295,9 @@
    "question": "Un chercheur fixe un petit boîtier GNSS sur une tortue de mer pour enregistrer ses déplacements. Comment appelle-t-on ce type d'application ?",
    "choix": [
     "La maintenance prédictive (capteurs de vibrations)",
-    "La digitalisation de produit (étiquettes NFC)",
+    "La digitalisation de produit (étiquettes NFC sur l'objet)",
     "La gestion de la chaîne du froid (transport réfrigéré)",
-    "Le biologging (bio-loggers posés sur la faune sauvage)"
+    "Le biologging (capteurs portés par la faune sauvage)"
    ],
    "bonne": 3,
    "explication": "Les bio-loggers sont des capteurs portés par des animaux sauvages (suivi GNSS, colliers) : c'est de la surveillance de l'environnement. Les autres réponses concernent l'industrie et l'agroalimentaire.",
@@ -326,8 +326,8 @@
    "choix": [
     "Parce que les serveurs ne savent pas stocker de données brutes",
     "Pour pouvoir se passer complètement de capteurs sur le nœud",
-    "Pour envoyer moins de données, donc émettre moins longtemps et économiser l'énergie",
-    "Parce qu'un nœud ne sait pas émettre de données brutes"
+    "Pour envoyer moins de données, donc émettre moins longtemps",
+    "Parce qu'un nœud n'a pas le droit d'émettre des mesures brutes"
    ],
    "bonne": 2,
    "explication": "Le nœud traite les données avant l'envoi. L'émission radio est la phase la plus gourmande (pic de courant) : moins de données à transmettre = moins de temps d'émission = plus d'autonomie.",
@@ -339,10 +339,10 @@
    "type": "compréhension",
    "question": "Un traceur pour animaux associe un module GNSS et un module GSM. Quel est le rôle de chacun ?",
    "choix": [
-    "Le GNSS donne la position (satellites), le GSM l'envoie par le réseau mobile",
-    "Le GSM calcule la position, le GNSS l'envoie au serveur",
-    "Le GNSS recharge la batterie, le GSM stocke les données",
-    "Les deux calculent la position pour plus de précision"
+    "Le GNSS donne la position, le GSM l'envoie par le réseau mobile",
+    "Le GSM calcule la position, le GNSS l'envoie au serveur par satellite",
+    "Le GNSS recharge la batterie, le GSM stocke les positions mesurées",
+    "Les deux calculent la position, pour obtenir une meilleure précision"
    ],
    "bonne": 0,
    "explication": "GNSS (dont le GPS) = capteur de position. GSM = moyen de communication. Pour le suivi, on peut aussi utiliser LoRaWAN ou le satellite (Iridium).",
@@ -354,9 +354,9 @@
    "type": "compréhension",
    "question": "Pourquoi les capteurs et nœuds IoT doivent-ils être bon marché ?",
    "choix": [
-    "Parce qu'on les déploie en grand nombre : le coût est multiplié par le nombre de nœuds",
-    "Parce qu'un capteur plus cher consomme forcément plus d'énergie sur pile",
-    "Parce qu'ils ne contiennent presque aucun composant électronique",
+    "Parce qu'on les déploie en grand nombre : le coût est multiplié",
+    "Parce qu'un capteur plus cher consomme plus d'énergie sur sa pile",
+    "Parce qu'ils contiennent très peu de composants électroniques",
     "Parce qu'ils sont jetés et remplacés après chaque campagne de mesure"
    ],
    "bonne": 0,
@@ -370,9 +370,9 @@
    "question": "Pourquoi un réseau IoT opéré installe-t-il plusieurs passerelles (gateways) ?",
    "choix": [
     "Parce qu'une passerelle ne peut recevoir qu'un seul capteur à la fois",
-    "Pour couvrir une zone plus grande : chaque nœud est reçu par les passerelles à sa portée",
-    "Pour enregistrer les données dans plusieurs bases différentes",
-    "Parce que chaque nœud doit obligatoirement avoir sa propre passerelle"
+    "Pour couvrir une zone plus grande que celle d'une seule passerelle",
+    "Pour enregistrer les mesures dans plusieurs bases de données différentes",
+    "Parce que chaque nœud doit être appairé à sa propre passerelle radio"
    ],
    "bonne": 1,
    "explication": "Les nœuds émettent vers une ou plusieurs passerelles, qui relaient vers Internet et le serveur réseau. Un nœud n'est attaché à aucune passerelle précise (voir chapitre V).",
@@ -384,9 +384,9 @@
    "type": "compréhension",
    "question": "Dans quel ordre une mesure envoyée par un nœud traverse-t-elle un réseau IoT opéré ?",
    "choix": [
-    "Nœud → base de données → passerelle → Internet → serveur réseau → supervision",
-    "Nœud → supervision → serveur réseau → passerelle → Internet → base de données",
-    "Nœud → serveur d'application → passerelle → Internet → serveur réseau → supervision",
+    "Nœud → base de données → passerelle → Internet → serveur réseau → serveur d'application → supervision",
+    "Nœud → supervision → serveur réseau → passerelle → Internet → serveur d'application → base de données",
+    "Nœud → serveur d'application → passerelle → Internet → serveur réseau → base de données → supervision",
     "Nœud → passerelle → Internet → serveur réseau → serveur d'application → base de données → supervision"
    ],
    "bonne": 3,
@@ -429,10 +429,10 @@
    "type": "raisonnement",
    "question": "Un club installe une dizaine de capteurs LoRa et un seul boîtier : un Raspberry Pi équipé d'une carte LoRa. Quels rôles ce boîtier assure-t-il ?",
    "choix": [
-    "Uniquement capteur : il mesure en plus des autres nœuds",
-    "Passerelle, serveur réseau, serveur d'application et base de données, tout en un",
-    "Uniquement base de données : les capteurs envoient directement sur Internet",
-    "Uniquement passerelle : les serveurs sont chez un opérateur"
+    "Un capteur de plus : il mesure comme les autres nœuds du club",
+    "Passerelle, serveur réseau, serveur d'application et base de données",
+    "La base de données seule : les capteurs envoient directement sur Internet",
+    "La passerelle seule : les serveurs restent chez un opérateur"
    ],
    "bonne": 1,
    "explication": "Réseau privé léger (non opéré) : un ordinateur monocarte + une carte LoRa regroupe passerelle, serveur réseau, serveur d'application et base de données, avec supervision locale ou à distance.",
@@ -444,10 +444,10 @@
    "type": "raisonnement",
    "question": "Un capteur d'humidité du sol détecte une terre trop sèche et le système ouvre une vanne d'irrigation pilotée à distance. Quelles fonctions d'un nœud sont mises en jeu ?",
    "choix": [
-    "Lire un capteur, traiter la donnée, commander un actionneur (la vanne) et communiquer",
-    "Seulement lire un capteur : la vanne s'ouvre seule",
-    "Seulement communiquer : le traitement est fait par la vanne",
-    "Seulement commander un actionneur : le capteur est inutile"
+    "Lire un capteur, traiter la donnée, commander la vanne et communiquer",
+    "Lire un capteur : la vanne s'ouvre seule dès que la terre sèche",
+    "Communiquer : le traitement de la mesure est fait par la vanne",
+    "Commander un actionneur : le capteur d'humidité n'a pas de rôle ici"
    ],
    "bonne": 0,
    "explication": "Les 4 fonctions d'un nœud : lire des capteurs, commander des actionneurs, traiter les données, communiquer. Capteur d'humidité et vanne pilotée sont des exemples d'IoT agricole.",
@@ -460,9 +460,9 @@
    "question": "Un vigneron veut que ses clients vérifient l'authenticité d'une bouteille en approchant leur téléphone de l'étiquette. Quelle famille d'applications et quelle technologie ?",
    "choix": [
     "La maintenance prédictive, avec un capteur de vibrations",
-    "La gestion de l'énergie, avec un compteur communicant",
-    "La digitalisation du produit, avec une étiquette NFC (ou un QR code)",
-    "Le suivi GNSS, avec un collier GPS"
+    "La gestion de l'énergie, avec un compteur électrique communicant",
+    "La digitalisation du produit, avec une étiquette NFC",
+    "Le suivi GNSS, avec un collier GPS fixé sur la bouteille"
    ],
    "bonne": 2,
    "explication": "Digitalisation du produit : QR code, NFC et RFID associent un objet physique à des données numériques lisibles par un téléphone.",
@@ -474,10 +474,10 @@
    "type": "raisonnement",
    "question": "Un gestionnaire de port veut être prévenu si un bateau amarré prend l'eau, prend feu ou si sa batterie se décharge. À quel domaine d'application IoT cela correspond-il ?",
    "choix": [
-    "La gestion de la chaîne du froid (transport réfrigéré)",
-    "La surveillance des séismes et des tsunamis en mer",
+    "La chaîne du froid (alertes de température des cales réfrigérées)",
+    "La surveillance de l'environnement (séismes et tsunamis en mer)",
     "L'agriculture de précision (capteurs de sol et d'humidité)",
-    "Les applications maritimes (alertes d'inondation, d'incendie, de batterie)"
+    "Les applications maritimes (inondation, incendie, batterie)"
    ],
    "bonne": 3,
    "explication": "Le maritime (catégorie industrie) regroupe précisément ces alertes. Séismes et tsunamis relèvent de la surveillance de l'environnement.",
@@ -489,10 +489,10 @@
    "type": "connaissance",
    "question": "Lesquels de ces critères décrivent les performances métrologiques d'un capteur ?",
    "choix": [
-    "Prix, taille, poids, couleur, marque",
+    "Prix, encombrement, consommation, protection, coût de fabrication",
     "Étendue de mesure, précision, résolution, linéarité, stabilité",
-    "Débit, portée, bande passante, latence, canal",
-    "Tension, courant, puissance, énergie, rendement"
+    "Débit, portée, bande passante, latence, fréquence de la porteuse",
+    "Tension, courant, puissance consommée, énergie, rendement global"
    ],
    "bonne": 1,
    "explication": "Performances métrologiques : étendue de mesure, précision, résolution (bruit propre, sensibilité), linéarité, stabilité. Encombrement, consommation, protection et coût sont d'autres contraintes.",
@@ -519,10 +519,10 @@
    "type": "connaissance",
    "question": "Quelle description de l'I2C est exacte ?",
    "choix": [
-    "Série, asynchrone, full-duplex, 2 fils TX et RX croisés, sans adresse",
-    "Série, synchrone, full-duplex, 4 fils CLK, MOSI, MISO, CS par esclave",
-    "Série, synchrone, half-duplex, 2 fils SCL et SDA, adresses 7 bits, 1 maître et N esclaves",
-    "Parallèle sur 16 fils, réservée aux écrans et aux mémoires externes"
+    "Série, asynchrone, full-duplex, 2 fils TX et RX croisés, sans adresse ni horloge",
+    "Série, synchrone, full-duplex, 4 fils CLK, MOSI, MISO et un CS par esclave",
+    "Série, synchrone, half-duplex, 2 fils SCL et SDA, adresses sur 7 bits",
+    "Parallèle sur 16 fils, réservée aux écrans et aux mémoires externes rapides"
    ],
    "bonne": 2,
    "explication": "I2C : SCL (horloge) + SDA (données), half-duplex, adresses matérielles de 7 bits. Les autres descriptions sont celles de l'UART, du SPI et d'une interface parallèle.",
@@ -536,7 +536,7 @@
    "choix": [
     "Main Oscillator Serial Input et Main Oscillator Serial Output (horloges)",
     "Master Output Signal Inverted et Master Input Signal Inverted (logique)",
-    "Master Out Slave In (maître → esclave) et Master In Slave Out (esclave → maître)",
+    "Master Out Slave In (maître → esclave), Master In Slave Out (l'inverse)",
     "Les deux lignes d'horloge, celle du maître et celle de l'esclave"
    ],
    "bonne": 2,
@@ -549,10 +549,10 @@
    "type": "connaissance",
    "question": "Lequel de ces services est assuré par la RTC (horloge temps réel) d'un microcontrôleur ?",
    "choix": [
-    "Garder l'heure et la date, et réveiller le processeur par une alarme",
-    "Convertir les tensions des capteurs en nombres",
-    "Gérer les communications radio LoRa",
-    "Fournir la tension d'alimentation du processeur"
+    "Garder l'heure et la date, et réveiller le processeur par alarme",
+    "Convertir les tensions des capteurs analogiques en nombres binaires",
+    "Gérer les communications radio LoRa et les acquittements",
+    "Fournir la tension d'alimentation régulée du processeur et de la mémoire"
    ],
    "bonne": 0,
    "explication": "RTC : heure et calendrier, alarmes, réveil (drapeau et interruption), horodatage d'événements, détection d'intrusion (tamper), registres de sauvegarde.",
@@ -594,10 +594,10 @@
    "type": "compréhension",
    "question": "Pourquoi relie-t-on un écran ou une mémoire RAM externe par une interface parallèle plutôt que série ?",
    "choix": [
-    "Parce que les interfaces parallèles consomment moins",
-    "Parce qu'une interface parallèle utilise moins de broches",
-    "Parce qu'il faut transférer beaucoup de données vite, quitte à utiliser beaucoup de broches",
-    "Parce que les interfaces série ne peuvent pas transporter d'images"
+    "Parce que les interfaces parallèles consomment moins d'énergie",
+    "Parce qu'une interface parallèle utilise moins de broches du MCU",
+    "Pour transférer beaucoup de données vite, malgré le nombre de broches",
+    "Parce que les interfaces série ne savent pas transporter des images"
    ],
    "bonne": 2,
    "explication": "Parallèle (FSMC, SDIO) : rapide, beaucoup de broches, gros volumes (RAM externe, écrans). Série : peu de broches, plus lente, volumes faibles à moyens.",
@@ -609,9 +609,9 @@
    "type": "compréhension",
    "question": "Lors de la lecture de plusieurs octets sur un bus I2C, qui envoie l'acquittement après chaque octet de données, et que se passe-t-il après le dernier ?",
    "choix": [
-    "Personne : en lecture sur un bus I2C, il n'y a jamais d'acquittement",
-    "Le maître envoie un NACK après chaque octet, puis un ACK après le dernier",
-    "Le maître envoie un ACK après chaque octet, puis un NACK après le dernier, suivi d'un STOP",
+    "Personne : en lecture sur un bus I2C, les octets ne sont pas acquittés",
+    "Le maître envoie un NACK après chaque octet, puis un ACK et un STOP",
+    "Le maître : ACK après chaque octet, NACK après le dernier, puis STOP",
     "L'esclave s'acquitte lui-même après chaque octet qu'il vient d'envoyer"
    ],
    "bonne": 2,
@@ -625,8 +625,8 @@
    "question": "Pourquoi le SPI peut-il être full-duplex alors que l'I2C est half-duplex ?",
    "choix": [
     "Parce que l'horloge du SPI est beaucoup plus rapide que celle de l'I2C",
-    "Parce que le SPI a une ligne de données par sens (MOSI, MISO), l'I2C une seule (SDA)",
-    "Parce que l'I2C n'a pas de fil d'horloge, contrairement au SPI",
+    "Parce que le SPI a une ligne de données par sens, l'I2C une seule",
+    "Parce que l'I2C n'a pas de fil d'horloge dédié, contrairement au SPI",
     "Parce que le SPI n'utilise pas d'adresses pour choisir l'esclave"
    ],
    "bonne": 1,
@@ -639,10 +639,10 @@
    "type": "compréhension",
    "question": "Combien d'étapes de comparaison un CAN à approximations successives (SAR) de 12 bits effectue-t-il pour une conversion ?",
    "choix": [
-    "4096 : une par niveau possible",
-    "2 : le premier et le dernier bit",
+    "4096 : une comparaison par niveau de tension possible",
+    "2 : une pour le bit de poids fort, une pour le poids faible",
     "12 : une par bit, du poids fort au poids faible",
-    "1 : tous les bits sont trouvés en même temps"
+    "1 : les 12 bits sont trouvés d'un seul coup"
    ],
    "bonne": 2,
    "explication": "Le SAR fait une recherche dichotomique avec un seul comparateur : un bit par étape, donc N étapes pour N bits. C'est le CAN Flash qui compare tout en une fois, avec environ 2^N comparateurs.",
@@ -654,10 +654,10 @@
    "type": "compréhension",
    "question": "Que devient le quantum d'un CAN quand on passe de 8 à 12 bits, avec la même pleine échelle ?",
    "choix": [
-    "Il est divisé par 16 (2^4) : la mesure devient 16 fois plus fine",
+    "Il est divisé par 16 : la mesure devient plus fine",
     "Il ne change pas : seule la pleine échelle compte",
     "Il est divisé par 4, comme le nombre de bits ajoutés",
-    "Il est multiplié par 16"
+    "Il est multiplié par 16 : la mesure devient plus grossière"
    ],
    "bonne": 0,
    "explication": "q = FS / 2^n. On passe de 2^8 = 256 à 2^12 = 4096 niveaux : q est divisé par 4096 / 256 = 16.",
@@ -672,7 +672,7 @@
     "Ils sont conservés et le programme reprend exactement là où il s'était arrêté",
     "Ils sont copiés automatiquement dans la mémoire Flash avant la mise en veille",
     "Seuls les registres sont perdus ; la SRAM, elle, est entièrement conservée",
-    "Ils sont perdus : seuls le domaine de sauvegarde (RTC, backup) et la logique de réveil restent alimentés"
+    "Ils sont perdus ; seuls la RTC et les registres de backup restent alimentés"
    ],
    "bonne": 3,
    "explication": "Standby : régulateur coupé, SRAM et registres perdus, entrées-sorties en haute impédance ; seuls le domaine de sauvegarde (RTC, registres de backup) et la logique de réveil restent alimentés. En mode Stop, au contraire, SRAM et registres sont conservés.",
@@ -685,7 +685,7 @@
    "question": "Un nœud se réveille une fois par minute, émet 0,8 ms à 50 mA et dort le reste du temps à 100 µA. Pourquoi la veille pèse-t-elle plus dans sa consommation que l'émission, pourtant 500 fois plus gourmande ?",
    "choix": [
     "Parce que l'émission radio ne consomme presque rien en moyenne sur la batterie",
-    "Parce que la veille dure presque toute la minute : c'est le produit courant × durée qui compte",
+    "Parce que la veille dure presque toute la minute (charge = courant × durée)",
     "Parce que le courant de veille s'ajoute au courant d'émission à chaque envoi",
     "Parce que la veille fonctionne sous une tension d'alimentation plus élevée"
    ],
@@ -789,10 +789,10 @@
    "type": "connaissance",
    "question": "Quelles technologies se partagent la bande des 2,4 GHz ?",
    "choix": [
-    "RFID et NFC",
-    "La 4G et la 5G uniquement",
+    "RFID, NFC et badges sans contact",
+    "La 4G et la 5G des téléphones",
     "Wi-Fi, Bluetooth et Zigbee",
-    "LoRa et Sigfox"
+    "LoRa, Sigfox et les talkies-walkies"
    ],
    "bonne": 2,
    "explication": "2,4 GHz : Wi-Fi, Bluetooth, Zigbee. 868 MHz (Europe) : Sigfox, LoRa. 13,56 MHz : RFID et NFC. 5 GHz : Wi-Fi.",
@@ -806,8 +806,8 @@
    "choix": [
     "13,56 MHz",
     "868 MHz",
-    "433 MHz",
-    "2,4 GHz"
+    "433,92 MHz",
+    "2,45 GHz"
    ],
    "bonne": 0,
    "explication": "13,56 MHz : RFID et NFC. 433 MHz : télécommandes, talkies-walkies, LoRa. 868 MHz : LoRa et Sigfox en Europe. 2,4 GHz : Wi-Fi, Bluetooth, Zigbee.",
@@ -834,10 +834,10 @@
    "type": "connaissance",
    "question": "PWM, PDM, PAM et PPM sont des modulations dans lesquelles…",
    "choix": [
-    "une porteuse sinusoïdale transporte des données numériques",
-    "une porteuse sinusoïdale transporte un signal analogique",
-    "une porteuse numérique (des impulsions) transporte un signal analogique",
-    "une porteuse numérique transporte des données numériques"
+    "une porteuse sinusoïdale (analogique) transporte des données numériques",
+    "une porteuse sinusoïdale (analogique) transporte un signal analogique",
+    "une porteuse numérique (impulsions) transporte un signal analogique",
+    "une porteuse numérique (impulsions) transporte des données numériques"
    ],
    "bonne": 2,
    "explication": "Porteuse analogique + message analogique : AM, FM, PM. Porteuse analogique + données numériques : ASK, FSK, PSK, QAM (radio). Porteuse numérique + message analogique : PAM, PWM, PDM, PPM. Numérique + numérique : PCM (liaisons filaires).",
@@ -849,10 +849,10 @@
    "type": "connaissance",
    "question": "Que signifie partager le support radio en TDM ?",
    "choix": [
-    "Tous émettent en même temps sur la même fréquence avec des codes différents",
-    "Les émetteurs utilisent la même fréquence chacun à leur tour, dans des intervalles de temps",
-    "Chaque émetteur augmente sa puissance pour couvrir les autres",
-    "Chaque émetteur garde sa propre fréquence en permanence"
+    "Les émetteurs parlent ensemble sur la même fréquence, chacun avec son code",
+    "Chacun émet à son tour sur la même fréquence, dans un intervalle de temps",
+    "Chaque émetteur augmente sa puissance pour couvrir celle des autres",
+    "Chaque émetteur garde en permanence sa propre fréquence réservée"
    ],
    "bonne": 1,
    "explication": "TDM = Time Division Multiplexing (partage en temps). FDM = partage en fréquence. CDMA = même fréquence au même moment, avec des codes orthogonaux.",
@@ -864,10 +864,10 @@
    "type": "connaissance",
    "question": "Que représente le bilan de liaison (link budget) ?",
    "choix": [
-    "L'atténuation maximale acceptable entre l'émetteur et le récepteur",
-    "La puissance consommée par l'émetteur sur sa batterie",
-    "La puissance reçue mesurée par le récepteur",
-    "Le nombre de messages qu'on peut envoyer par jour"
+    "L'atténuation maximale acceptable entre émetteur et récepteur",
+    "La puissance consommée par l'émetteur sur sa batterie à chaque envoi",
+    "La puissance du signal reçu, mesurée par le récepteur en dBm",
+    "Le nombre de messages qu'on peut envoyer par jour sans dépasser la limite"
    ],
    "bonne": 0,
    "explication": "Bilan de liaison = atténuation maximale acceptable = P_E + gains des antennes − sensibilité, en dB. La puissance reçue mesurée, c'est le RSSI.",
@@ -879,10 +879,10 @@
    "type": "connaissance",
    "question": "Quel est le rôle d'une antenne ?",
    "choix": [
-    "Filtrer le bruit pour ne garder que le message utile",
+    "Filtrer le bruit pour ne garder que le message utile à la réception",
     "Amplifier le signal reçu avant de l'envoyer au processeur du nœud",
-    "Convertir un signal électrique en onde électromagnétique, et inversement à la réception",
-    "Moduler la porteuse haute fréquence avec le message à transmettre"
+    "Convertir un signal électrique en onde électromagnétique, et inversement",
+    "Moduler la porteuse haute fréquence avec le message binaire à émettre"
    ],
    "bonne": 2,
    "explication": "L'antenne fait le passage électrique ↔ électromagnétique (tension d'émission → onde → tension reçue). Modulation, amplification et filtrage sont faits par les circuits radio.",
@@ -894,10 +894,10 @@
    "type": "compréhension",
    "question": "Pourquoi un objet Wi-Fi à 2,4 GHz peut-il avoir une antenne bien plus petite qu'un module LoRa à 433 MHz ?",
    "choix": [
-    "Parce que le Wi-Fi a une portée plus faible que LoRa",
+    "Parce que le Wi-Fi a une portée plus faible que celle de LoRa",
     "Parce que sa longueur d'onde est plus courte (12,5 cm contre 69 cm)",
-    "Parce que le Wi-Fi émet avec beaucoup moins de puissance",
-    "Parce qu'à 2,4 GHz l'antenne n'a pas besoin d'être accordée"
+    "Parce que le Wi-Fi émet avec beaucoup moins de puissance que LoRa",
+    "Parce qu'à 2,4 GHz, l'antenne n'a pas besoin d'être accordée au signal"
    ],
    "bonne": 1,
    "explication": "λ = c / f : fréquence plus haute = λ plus courte = antenne plus petite (antennes en λ/4 ou λ/2).",
@@ -924,9 +924,9 @@
    "type": "compréhension",
    "question": "Combien de bits transporte chaque symbole d'une modulation QPSK, et pourquoi ?",
    "choix": [
-    "2 bits, car la phase peut prendre 4 valeurs différentes",
+    "2 bits, car la phase peut prendre 4 valeurs",
     "1 bit, car il n'y a que deux phases opposées",
-    "4 bits, car il y a 4 phases",
+    "4 bits, car il y a 4 phases possibles à décoder",
     "8 bits, car un symbole correspond à un octet"
    ],
    "bonne": 0,
@@ -942,7 +942,7 @@
     "Elle est multipliée par quatre",
     "Elle ne change pas",
     "Elle est divisée par deux",
-    "Elle double"
+    "Elle est multipliée par deux"
    ],
    "bonne": 3,
    "explication": "Le lobe principal vaut 2 fm, avec fm lié au débit (1 kbit/s → lobe de 2 kHz). Plus on transmet vite, plus il faut de bande.",
@@ -956,8 +956,8 @@
    "choix": [
     "Le SNR doit valoir 0 dB : signal et bruit doivent être égaux",
     "Le SNR doit rester en dessous d'un seuil : le bruit doit dominer",
-    "Le SNR n'a aucune importance tant que le RSSI est suffisant",
-    "Le SNR doit être au-dessus d'un seuil : le signal doit dominer le bruit"
+    "Le SNR importe peu, du moment que le RSSI dépasse la sensibilité",
+    "Le SNR doit dépasser un seuil : le signal doit dominer le bruit"
    ],
    "bonne": 3,
    "explication": "SNR = P_R / P_N. Bonne réception : RSSI > sensibilité et SNR suffisant. La slide écrit « below a given limit » : c'est une coquille, un SNR faible veut dire trop de bruit.",
@@ -984,10 +984,10 @@
    "type": "compréhension",
    "question": "Pourquoi la portée calculée avec la formule de Friis est-elle une limite théorique ?",
    "choix": [
-    "Parce qu'elle suppose l'espace libre, sans obstacle : la portée réelle est plus faible",
+    "Parce qu'elle suppose une propagation sans obstacle (espace libre)",
     "Parce qu'elle ne tient pas compte de la puissance de l'émetteur",
     "Parce qu'elle surestime la perte : en réalité la portée est plus grande",
-    "Parce qu'elle n'est valable qu'à la fréquence de 868 MHz"
+    "Parce qu'elle n'est valable qu'à 868 MHz, la fréquence de LoRa"
    ],
    "bonne": 0,
    "explication": "Friis décrit l'affaiblissement en espace libre. Bâtiments, relief et végétation ajoutent des pertes : c'est pourquoi les 1947 km du SX1272 sont une « limite théorique ».",
@@ -1002,7 +1002,7 @@
     "Deux raies, à 2 kHz et à 50 kHz",
     "Deux raies, à 48 kHz et à 52 kHz",
     "Trois raies, à 48, 50 et 52 kHz",
-    "Une seule raie, à 50 kHz"
+    "Une seule raie, à la porteuse de 50 kHz"
    ],
    "bonne": 1,
    "explication": "s = c × m donne des raies à fc ± fm (sin a × sin b = ½ [cos(a − b) − cos(a + b)]). Sans porteuse, pas de raie à fc : la raie à 50 kHz n'existe qu'en AM avec porteuse.",
@@ -1014,10 +1014,10 @@
    "type": "raisonnement",
    "question": "Les codes CDMA (1, 1, −1, −1) et (1, −1, −1, 1) sont-ils orthogonaux ?",
    "choix": [
-    "Non : ils commencent par le même élément",
+    "Non, car ils commencent par le même élément (1)",
     "Non : la somme des produits terme à terme vaut 4",
     "Oui, simplement parce qu'ils contiennent autant de 1 que de −1",
-    "Oui : la somme des produits terme à terme vaut 1 − 1 + 1 − 1 = 0"
+    "Oui : la somme des produits terme à terme vaut 0"
    ],
    "bonne": 3,
    "explication": "Deux codes sont orthogonaux si la somme de leurs produits terme à terme est nulle. C'est ce qui permet à chaque récepteur de retrouver son message en multipliant par son propre code.",
@@ -1119,10 +1119,10 @@
    "type": "connaissance",
    "question": "Que contient l'en-tête TCP ajouté à un segment ?",
    "choix": [
-    "Les adresses IP de la source et de la destination du paquet",
+    "Les adresses IP source et destination, et la durée de vie (TTL)",
     "Les adresses MAC de la source et du prochain saut sur le réseau",
-    "Le nom de la page web demandée et la méthode HTTP utilisée",
-    "Les ports source et destination, un numéro de séquence et une somme de contrôle"
+    "L'adresse de la page web demandée et la méthode HTTP utilisée",
+    "Ports source et destination, numéro de séquence, somme de contrôle"
    ],
    "bonne": 3,
    "explication": "En-tête TCP : ports, numéro de séquence, somme de contrôle (checksum). Les adresses IP sont dans l'en-tête IP, les adresses MAC dans l'en-tête de trame, l'URL dans la requête HTTP.",
@@ -1164,10 +1164,10 @@
    "type": "connaissance",
    "question": "Qu'est-ce que Node-RED ?",
    "choix": [
-    "Un broker MQTT qui relaie les messages entre les clients",
-    "Un outil de programmation graphique par flux, dans le navigateur, basé sur Node.js",
-    "Un langage de requêtes qui sert à interroger InfluxDB",
-    "Une base de données de séries temporelles pour les mesures"
+    "Un broker MQTT qui relaie les messages entre publieurs et abonnés",
+    "Un outil de programmation graphique par flux, basé sur Node.js",
+    "Un langage de requêtes qui sert à interroger la base InfluxDB",
+    "Une base de données de séries temporelles pour stocker les mesures"
    ],
    "bonne": 1,
    "explication": "Node-RED relie des entrées, des traitements et des sorties (HTTP, MQTT, décodage Base64, base de données, tableau de bord). La base temporelle est InfluxDB, le broker est Mosquitto, le langage de requêtes est Flux.",
@@ -1179,10 +1179,10 @@
    "type": "connaissance",
    "question": "À quoi sert Grafana dans une chaîne IoT ?",
    "choix": [
-    "À enregistrer les mesures reçues dans des fichiers CSV",
-    "À relayer les messages MQTT entre publieurs et abonnés",
-    "À interroger une base (InfluxDB) et afficher des tableaux de bord en direct",
-    "À encoder les données en Base64 avant leur envoi"
+    "À enregistrer les mesures reçues dans des fichiers CSV horodatés",
+    "À relayer les messages MQTT entre les publieurs et les abonnés",
+    "À afficher en direct des tableaux de bord à partir d'InfluxDB",
+    "À encoder les données en Base64 avant leur envoi dans une URL"
    ],
    "bonne": 2,
    "explication": "Grafana = visualisation et analyse avancées, tableaux de bord web en direct (port 3000). Le relais MQTT est le rôle du broker.",
@@ -1209,10 +1209,10 @@
    "type": "compréhension",
    "question": "Qu'est-ce qui distingue une page web dynamique d'une page statique ?",
    "choix": [
-    "Elle est stockée sur plusieurs serveurs en même temps",
-    "Son contenu est produit à la demande (traitements, base de données)",
-    "Elle ne peut être consultée que depuis un réseau Wi-Fi",
-    "Elle contient des images animées et des vidéos intégrées"
+    "Elle est stockée en plusieurs copies sur plusieurs serveurs à la fois",
+    "Son contenu est produit à la demande, par exemple depuis une base",
+    "Elle ne peut être consultée que depuis un réseau Wi-Fi local sécurisé",
+    "Elle contient des images animées et des vidéos intégrées dans le code"
    ],
    "bonne": 1,
    "explication": "Une page statique est renvoyée telle quelle. Une page dynamique peut changer en direct, traiter des données reçues, dialoguer avec d'autres serveurs ou une base, voire ne rien afficher.",
@@ -1224,10 +1224,10 @@
    "type": "compréhension",
    "question": "Pourquoi envoyer des données avec une requête POST plutôt qu'avec une requête GET ?",
    "choix": [
-    "Parce que POST place les données dans le corps de la requête, pas dans l'URL",
-    "Parce que GET ne peut transmettre aucune donnée",
-    "Parce que POST est la seule requête qui reçoit une réponse",
-    "Parce que POST n'utilise pas TCP"
+    "Parce que POST met les données dans le corps de la requête",
+    "Parce qu'une requête GET n'envoie pas de données au serveur",
+    "Parce que POST est la seule requête à laquelle le serveur répond",
+    "Parce que POST passe directement par UDP au lieu de passer par TCP"
    ],
    "bonne": 0,
    "explication": "GET transmet les paramètres dans l'URL (…?get_data=42, lus avec $_GET) ; POST les met dans la requête elle-même (lus avec $_POST).",
@@ -1239,9 +1239,9 @@
    "type": "compréhension",
    "question": "Pourquoi une station météo envoie-t-elle ses mesures en 6 octets binaires plutôt que sous la forme du texte « 1,65,19600,1050 » ?",
    "choix": [
-    "Parce que le binaire est plus facile à lire pour un humain",
-    "Parce que le texte fait 15 octets contre 6 : le message est bien plus court",
-    "Parce que le serveur chiffrerait automatiquement le texte",
+    "Parce que le binaire est plus facile à relire pour un technicien",
+    "Parce que le texte fait 15 octets contre 6 en binaire",
+    "Parce que le serveur chiffrerait automatiquement le texte reçu",
     "Parce qu'un texte ne peut pas contenir de chiffres ni de virgules"
    ],
    "bonne": 1,
@@ -1254,9 +1254,9 @@
    "type": "compréhension",
    "question": "Quel niveau de QoS MQTT garantit qu'un message arrive exactement une fois, et comment ?",
    "choix": [
-    "La QoS 0, car le message n'est envoyé qu'une seule fois",
-    "La QoS 2, grâce à un échange en 4 étapes : Publish, Received, Release, Completed",
-    "La QoS 3, réservée aux messages importants",
+    "La QoS 0, car le message n'est envoyé qu'une seule fois au broker",
+    "La QoS 2, grâce à un échange en 4 étapes entre client et broker",
+    "La QoS 3, réservée aux messages importants qui ne doivent pas se perdre",
     "La QoS 1, car l'émetteur renvoie jusqu'à recevoir un acquittement"
    ],
    "bonne": 1,
@@ -1269,10 +1269,10 @@
    "type": "compréhension",
    "question": "Dans InfluxDB, comment range-t-on la pièce d'une mesure (salon, chambre…) et les valeurs mesurées (température, pression…) ?",
    "choix": [
-    "La pièce en field, les valeurs mesurées en tags",
-    "Les deux dans le nom du measurement",
+    "La pièce en field, les valeurs mesurées en tags, sans horodatage",
+    "Les deux dans le nom du measurement, par exemple salon_temperature",
     "La pièce en bucket, les valeurs mesurées en organisation",
-    "La pièce en tag, les valeurs mesurées en fields, chaque point avec son horodatage"
+    "La pièce en tag, les valeurs mesurées en fields"
    ],
    "bonne": 3,
    "explication": "Modèle InfluxDB : organisation > bucket (durée de rétention) > measurement > tags (ce qui identifie, ex. la pièce) + fields (les valeurs : T, P, H) + timestamp.",
@@ -1285,9 +1285,9 @@
    "question": "Dans une URL qui transporte des données Base64, pourquoi remplace-t-on le caractère « + » par « %2B » ?",
    "choix": [
     "Parce qu'un « + » brut dans une URL est lu comme un espace",
-    "Pour chiffrer le message avant de l'envoyer",
+    "Pour chiffrer le message avant de l'envoyer sur Internet",
     "Parce que « %2B » prend moins de place que « + »",
-    "Parce que « + » n'existe pas dans l'alphabet Base64"
+    "Parce que « + » ne fait pas partie de l'alphabet Base64"
    ],
    "bonne": 0,
    "explication": "« + » fait partie de l'alphabet Base64 (valeur 62). Dans une URL, il serait décodé en espace et la donnée serait abîmée : d'où le remplacement par %2B dans le décodeur.",
@@ -1329,10 +1329,10 @@
    "type": "raisonnement",
    "question": "Une température est codée en °C × 1000 sur un entier non signé de 16 bits. Quelles températures peut-on transmettre ?",
    "choix": [
-    "De −32,768 à +32,767 °C",
+    "De −32,768 à +32,767 °C, au pas de 0,001 °C",
     "De 0 à 65 535 °C, au pas de 1 °C",
     "De 0 à 255 °C, au pas de 1 °C",
-    "De 0 à 65,535 °C, sans valeur négative"
+    "De 0 à 65,535 °C, au pas de 0,001 °C"
    ],
    "bonne": 3,
    "explication": "16 bits non signés : 0 à 65 535. Divisé par 1000 : 0 à 65,535 °C, au pas de 0,001 °C. Pour des températures négatives, il faudrait un entier signé.",
@@ -1374,8 +1374,8 @@
    "type": "raisonnement",
    "question": "On relève la température des 3 pièces d'une maison exactement à 14 h. Quel type de données obtient-on ?",
    "choix": [
-    "Des données transversales (cross-sectional) : plusieurs entités à un même instant",
-    "Des données géolocalisées en geohash",
+    "Des données transversales : plusieurs entités à un même instant",
+    "Des données géolocalisées en geohash, une par pièce",
     "Des données de panel : plusieurs entités à plusieurs instants",
     "Une série temporelle : une seule entité à plusieurs instants"
    ],
@@ -1389,10 +1389,10 @@
    "type": "connaissance",
    "question": "Que signifie LoRaWAN, et à quelle famille de réseaux appartient-il ?",
    "choix": [
-    "Local Radio Wide Area Network, un réseau cellulaire 4G",
+    "Local Radio Wide Area Network, un réseau cellulaire de type 4G",
     "Low Rate Wireless Access Network, un réseau Wi-Fi basse consommation",
-    "Long Range Wide Area Network, un LPWAN comme Sigfox, NB-IoT et LTE-M",
-    "Long Range Wired Area Network, un réseau filaire industriel"
+    "Long Range Wide Area Network, un LPWAN comme Sigfox ou NB-IoT",
+    "Long Range Wired Area Network, un réseau filaire pour l'industrie"
    ],
    "bonne": 2,
    "explication": "LoRaWAN fait partie des LPWAN : faible consommation, faible coût, faible débit, longue portée.",
@@ -1404,10 +1404,10 @@
    "type": "connaissance",
    "question": "Quels sont les 4 paramètres d'une transmission LoRa ?",
    "choix": [
-    "Le préambule, l'en-tête, le payload et le CRC",
-    "Le DevEUI, l'AppKey, le DevAddr et le MIC",
-    "Le spreading factor, le canal, la bande passante et le coding rate",
-    "La puissance, l'antenne, la batterie et la passerelle"
+    "Le préambule, l'en-tête, le payload et le CRC de la trame",
+    "Le DevEUI, l'AppKey, le DevAddr et le MIC de chaque message",
+    "Le spreading factor, le canal, la bande passante, le coding rate",
+    "La puissance d'émission, l'antenne, la batterie et la passerelle"
    ],
    "bonne": 2,
    "explication": "SF, canal, BW et CR doivent être identiques des deux côtés d'une liaison point à point. Les autres listes sont des identifiants LoRaWAN et les champs d'une trame.",
@@ -1419,10 +1419,10 @@
    "type": "connaissance",
    "question": "Quelles bandes LoRa peut-on utiliser en France ?",
    "choix": [
-    "2,400-2,4835 GHz, comme le Wi-Fi",
-    "902-928 MHz (US915), comme aux États-Unis",
+    "2,400-2,4835 GHz (ISM 2,4), comme le Wi-Fi et le Bluetooth",
+    "902-928 MHz (US915), la même bande qu'en Amérique du Nord",
     "433,05-434,79 MHz (EU433) et 863-870 MHz (EU863-870)",
-    "13,56 MHz et 868 MHz seulement"
+    "13,56 MHz (bande RFID et NFC) et 863-870 MHz (EU863-870)"
    ],
    "bonne": 2,
    "explication": "Paramètres régionaux de la LoRa Alliance : en France, EU433 et EU863-870. US915 est la bande américaine.",
@@ -1437,7 +1437,7 @@
     "À chiffrer le payload avec la clé de l'application",
     "À indiquer l'adresse du nœud destinataire du message",
     "À synchroniser le récepteur avant l'arrivée des données",
-    "À vérifier l'intégrité du message reçu"
+    "À vérifier l'intégrité du message à la réception"
    ],
    "bonne": 2,
    "explication": "Préambule = N + 4,25 symboles (12,25 par défaut) pour synchroniser le récepteur. L'intégrité est vérifiée par le CRC (et le MIC en LoRaWAN), le chiffrement est fait avec l'AppSKey.",
@@ -1464,10 +1464,10 @@
    "type": "connaissance",
    "question": "Qu'est-ce que le DevEUI d'un nœud LoRaWAN ?",
    "choix": [
-    "Son identifiant unique sur 64 bits (Extended Unique Identifier)",
-    "La clé qui chiffre ses données",
+    "Son identifiant unique et fixe, codé sur 64 bits",
+    "La clé de 128 bits qui chiffre ses données applicatives",
     "Son adresse attribuée par le réseau à chaque session",
-    "Le numéro du canal sur lequel il émet"
+    "Le numéro du canal radio sur lequel il émet en Europe"
    ],
    "bonne": 0,
    "explication": "Le DevEUI (ex. 0016c001f0003de3) est un identifiant unique et fixe. Le DevAddr est l'adresse sur le réseau, attribuée à l'activation ; l'AppSKey chiffre les données.",
@@ -1494,10 +1494,10 @@
    "type": "compréhension",
    "question": "Pourquoi éviter le SF12 quand un SF plus faible suffit ?",
    "choix": [
-    "Parce que le SF12 supprime le CRC et rend la trame moins fiable",
-    "Parce que le SF12 donne un débit très faible et un temps d'émission très long (plus d'énergie)",
+    "Parce que le SF12 supprime le CRC et rend donc la trame moins fiable",
+    "Parce que le SF12 a un débit très faible, donc une émission très longue",
     "Parce que le SF12 élargit fortement le spectre occupé par le signal",
-    "Parce que le SF12 est interdit par la réglementation européenne"
+    "Parce que le SF12 est interdit en Europe par la réglementation radio"
    ],
    "bonne": 1,
    "explication": "DR0 (SF12, 125 kHz) = 250 bit/s ; « Hello World! » dure environ 1,3 s en SF12 (CR 4/8) contre 41 ms en SF7 (CR 4/5) ; même à CR égal (4/5), il faudrait environ 1,06 s en SF12. Le SF n'élargit pas le spectre : c'est la bande passante qui le fixe.",
@@ -1510,9 +1510,9 @@
    "question": "Un nœud LoRaWAN doit-il être associé à une passerelle précise ?",
    "choix": [
     "Oui : chaque passerelle garde une liste fixe de nœuds autorisés",
-    "Non, mais il doit choisir une passerelle avant chaque envoi",
-    "Oui : il doit d'abord s'appairer avec la passerelle la plus proche",
-    "Non : il émet sans destinataire radio et toutes les passerelles qui l'entendent relaient"
+    "Non, mais il choisit une passerelle avant chaque envoi radio",
+    "Oui : il doit s'appairer avec la passerelle la plus proche",
+    "Non : toutes les passerelles qui l'entendent relaient son message"
    ],
    "bonne": 3,
    "explication": "Ni le nœud ni la passerelle ne sont attachés l'un à l'autre. La passerelle vérifie le CRC et transmet au serveur réseau, qui élimine les doublons.",
@@ -1527,7 +1527,7 @@
     "La clé de session réseau qui sert à calculer le MIC",
     "L'identifiant du join server, qui gère l'activation du nœud",
     "L'identifiant unique de la passerelle qui reçoit le nœud",
-    "L'adresse attribuée au nœud sur le réseau"
+    "L'adresse attribuée au nœud sur le réseau lors du Join"
    ],
    "bonne": 1,
    "explication": "En OTAA, le nœud connaît son DevEUI, le JoinEUI (qui identifie le join server) et l'AppKey. Le JoinEUI remplace l'ancien AppEUI depuis la version 1.0.4.",
@@ -1539,10 +1539,10 @@
    "type": "compréhension",
    "question": "Que fournit l'activation (ABP ou OTAA) à un nœud LoRaWAN ?",
    "choix": [
-    "Une adresse réseau (DevAddr) et deux clés de session : NwkSKey et AppSKey",
-    "Seulement le DevEUI, qui est gravé à la fabrication",
+    "Une adresse (DevAddr) et deux clés de session, NwkSKey et AppSKey",
+    "Le DevEUI du nœud, qui est inscrit à la fabrication dans la puce",
     "Un numéro de canal fixe et un spreading factor imposé",
-    "Une adresse IP et un mot de passe pour le réseau Wi-Fi"
+    "Une adresse IP et un mot de passe pour rejoindre le réseau Wi-Fi"
    ],
    "bonne": 0,
    "explication": "NwkSKey sert à l'authentification (MIC) avec le serveur réseau, AppSKey au chiffrement des données avec le serveur d'application. En ABP elles sont fixées à l'avance, en OTAA elles sont générées au Join.",
@@ -1554,10 +1554,10 @@
    "type": "compréhension",
    "question": "À quoi sert le DevNonce envoyé dans le Join Request ?",
    "choix": [
-    "C'est un compteur de join qui protège contre les attaques par rejeu",
-    "C'est l'adresse attribuée au nœud",
+    "C'est un compteur de join qui protège contre le rejeu",
+    "C'est l'adresse attribuée au nœud par le serveur réseau",
     "C'est la clé qui chiffre les données de l'application",
-    "Il indique le spreading factor à utiliser"
+    "Il indique le spreading factor que la passerelle doit utiliser"
    ],
    "bonne": 0,
    "explication": "L'OTAA est protégé contre le rejeu par le compteur DevNonce (il vaut 1 au premier Join Request de l'exemple) : un ancien Join Request renvoyé tel quel n'est pas accepté.",
@@ -1569,10 +1569,10 @@
    "type": "compréhension",
    "question": "Comment un équipement de classe B sait-il quand ouvrir ses fenêtres de réception ?",
    "choix": [
-    "Il écoute en permanence, dès qu'il n'est pas en train d'émettre",
+    "Il écoute en continu, dès qu'il n'est pas en train d'émettre un message",
     "Il n'écoute que dans les deux fenêtres qui suivent chacun de ses envois",
     "Il demande l'heure à la passerelle avant chaque fenêtre de réception",
-    "Il se synchronise sur des balises (beacons) et ouvre des fenêtres programmées"
+    "Il suit des balises (beacons) et ouvre des fenêtres programmées"
    ],
    "bonne": 3,
    "explication": "Classe B = classe A + réceptions programmées grâce aux beacons. Écoute permanente = classe C ; écoute seulement après l'envoi = classe A.",
@@ -1585,9 +1585,9 @@
    "question": "À SF fixé, que devient le débit LoRa quand on passe d'une bande passante de 125 kHz à 250 kHz ?",
    "choix": [
     "Il est multiplié par quatre, car le débit suit BW au carré",
-    "Il double, car chaque symbole dure deux fois moins longtemps",
+    "Il double, car chaque symbole dure moitié moins longtemps",
     "Il est divisé par deux, car le symbole dure plus longtemps",
-    "Il ne change pas, car seul le SF fixe le débit"
+    "Il ne change pas, car seul le spreading factor fixe le débit LoRa"
    ],
    "bonne": 1,
    "explication": "T_sym = 2^SF / BW et débit = SF × BW / 2^SF : le débit est proportionnel à BW. En SF7 : 6836 bit/s à 125 kHz, 13 672 bit/s à 250 kHz.",
@@ -1674,10 +1674,10 @@
    "type": "raisonnement",
    "question": "Un chirp SF12 avec 125 kHz de bande dure 32,768 ms. Combien de périodes de la porteuse à 868 MHz contient-il environ ?",
    "choix": [
-    "Environ 28 millions",
-    "Environ 28 000",
-    "Environ 868",
-    "Environ 4096"
+    "Environ 2,8 × 10^7",
+    "Environ 2,8 × 10^4",
+    "Environ 8,7 × 10^2",
+    "Environ 4,1 × 10^3"
    ],
    "bonne": 0,
    "explication": "868 × 10^6 périodes par seconde × 0,032768 s ≈ 2,84 × 10^7. Un seul symbole LoRa contient donc des dizaines de millions d'oscillations de la porteuse.",
